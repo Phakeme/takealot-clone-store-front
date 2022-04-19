@@ -1,13 +1,7 @@
-import "./App.css";
+import { HomeContainer } from "./containers/HomeContainer";
 
 function App() {
-  return (
-    <div className="">
-      <header className="">
-        <p>Codealot</p>
-      </header>
-    </div>
-  );
+  return <HomeContainer />;
 }
 
 export default App;
