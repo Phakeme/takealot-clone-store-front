@@ -1,13 +1,12 @@
 import React from "react";
-import { CovidBanner } from "../components/CovidBanner";
+import { CovidBanner } from "../components/covidBanner/CovidBanner";
+import { MainHeader } from "../components/mainHeader/MainHeader";
 
 export const HomeContainer = () => {
   return (
-    <div>
+    <>
       <CovidBanner />
-      <header className="">
-        <p>Main Header</p>
-      </header>
-    </div>
+      <MainHeader />
+    </>
   );
 };
