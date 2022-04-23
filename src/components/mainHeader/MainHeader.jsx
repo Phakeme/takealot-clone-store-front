@@ -2,9 +2,9 @@ import React from "react";
 import brandLogo from "../../images/takealot-logo.svg";
 import Heart from "../../images/heart.svg";
 import Cart from "../../images/shopping-cart.svg";
-import ArrowDown from "../../images/arrow-down.svg";
 import { Link } from "react-router-dom";
 import { NavLink } from "./NavLink";
+import { MyAccounts } from "./MyAccounts";
 
 export const MainHeader = () => {
   return (
@@ -31,12 +31,7 @@ export const MainHeader = () => {
             <NavLink path="/orders" label="Orders" />
 
             <div className="text-sm flex items-center justify-center  pl-2 h-8s">
-              <div className="flex items-center justify-center p-2 cursor-pointer">
-                <div>My Account</div>
-                <div className="pl-2 ">
-                  <img width="8px" src={ArrowDown} alt="" />
-                </div>
-              </div>
+              <MyAccounts />
               <div className="flex items-center justify-center mx-2 rounded-full bg-red-400 p-2 radius-2 cursor-pointer">
                 <img width="17px" src={Heart} alt="" />
               </div>
