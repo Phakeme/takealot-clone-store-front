@@ -13,8 +13,8 @@ export const CovidBanner = () => {
   };
 
   const Component = (
-    <div className="hidden md:block bg-blue text-white h-10 text-sm">
-      <div className="h-full grid grid-rows-1 grid-cols-[1fr,50px] items-center p-5">
+    <div className="bg-blue text-white text-sm text-center p-2">
+      <div className=" grid grid-rows-1 grid-cols-[1fr,50px] items-center">
         <div className="justify-self-center">
           <p>
             <strong>Stay informed! </strong>
