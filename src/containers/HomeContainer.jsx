@@ -1,5 +1,5 @@
 import React from "react";
 
-export const HomeContainer = () => {
-  return <div className="container mx-auto">Home</div>;
-};
+export const HomeContainer = () => (
+  <div className="container mx-auto">Home</div>
+);
