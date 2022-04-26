@@ -5,10 +5,13 @@ import BlackShoppingCart from "../../images/black-shopping-cart.svg";
 import Menu from "../../images/open-menu.svg";
 import { Link } from "react-router-dom";
 
-export const MobileMainHeader = () => {
+export const MobileMainHeader = ({ handleOpenSide }) => {
   return (
     <div className="flex justify-between items-center mx-2 md:hidden h-full">
-      <div className="hover: cursor-pointer p-3">
+      <div
+        className="hover: cursor-pointer p-3"
+        onClick={() => handleOpenSide()}
+      >
         <img width="20px" src={Menu} alt="open-menu" />
       </div>
       <Link to="/">
