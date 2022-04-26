@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import brandLogo from "../../images/takealot-logo.svg";
 import Heart from "../../images/heart.svg";
 import Cart from "../../images/shopping-cart.svg";
@@ -6,10 +6,19 @@ import { Link } from "react-router-dom";
 import { NavLink } from "./NavLink";
 import { MyAccounts } from "./MyAccounts";
 import { MobileMainHeader } from "./MobileMainHeader";
+import { MobileSideBar } from "./MobileSideBar";
 
 export const MainHeader = () => {
+  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
+  const handleOpenSide = () => {
+    setIsSideBarOpen(true);
+  };
+  const handleCloseSide = () => {
+    setIsSideBarOpen(false);
+  };
   return (
     <header>
+      {isSideBarOpen && <MobileSideBar handleCloseSide={handleCloseSide} />}
       <div className="bg-white h-16">
         <div className="h-full container mx-auto">
           <div className="hidden md:flex h-full flex justify-between items-center">
@@ -49,7 +58,7 @@ export const MainHeader = () => {
               </div>
             </div>
           </div>
-          <MobileMainHeader />
+          <MobileMainHeader handleOpenSide={handleOpenSide} />
         </div>
       </div>
       <div className="bg-blue h-20"></div>
