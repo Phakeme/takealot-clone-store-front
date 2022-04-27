@@ -5,8 +5,8 @@ import Cart from "../../images/shopping-cart.svg";
 import { Link } from "react-router-dom";
 import { NavLink } from "./NavLink";
 import { MyAccounts } from "./MyAccounts";
-import { MobileMainHeader } from "./MobileMainHeader";
-import { MobileSideBar } from "./MobileSideBar";
+import { MobileMainHeader } from "./mobiNavigations/MobileMainHeader";
+import { MobileSideBar } from "./mobiNavigations/MobileSideBar";
 
 export const MainHeader = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
@@ -61,7 +61,7 @@ export const MainHeader = () => {
           <MobileMainHeader handleOpenSide={handleOpenSide} />
         </div>
       </div>
-      <div className="bg-blue h-20"></div>
+      <div className="hidden sm:block bg-blue h-20"></div>
     </header>
   );
 };
