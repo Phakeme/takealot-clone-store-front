@@ -15,7 +15,7 @@ export const MobileMainHeader = ({ handleOpenSide }) => {
         <img width="20px" src={Menu} alt="open-menu" />
       </div>
       <Link to="/">
-        <img className="" width="180px" src={brandLogo} alt="codealot-brand" />
+        <img className="" width="160px" src={brandLogo} alt="codealot-brand" />
       </Link>
       <div className="flex">
         <div className="p-2 flex items-center justify-center hover: cursor-pointer">
