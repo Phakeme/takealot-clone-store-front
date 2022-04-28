@@ -1,5 +1,5 @@
-import { HomeContainer } from "./containers/HomeContainer";
-import { HelpContainer } from "./containers/HelpContainer";
+import { HomeContainer } from "./pages/HomeContainer";
+import { HelpContainer } from "./pages/HelpContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CovidBanner } from "./components/covidBanner/CovidBanner";
 import { MainHeader } from "./components/mainHeader/MainHeader";
