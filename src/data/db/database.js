@@ -1,4 +1,6 @@
 import Mock from "../mock.js";
+import CartGreen from "../../images/cart-green.svg";
+import Heart from "../../images/heart-red.svg";
 
 const database = {
   navigations: {
@@ -9,8 +11,8 @@ const database = {
       { label: "Register", path: "/register" },
       { label: "Orders", path: "/orders" },
       { label: "My Accounts", path: "/my-accounts" },
-      { label: "Cart", path: "/cart" },
-      { label: "List", path: "/list" },
+      { label: "Cart", path: "/cart", icon: CartGreen },
+      { label: "Lists", path: "/lists", icon: Heart },
     ],
   },
 };
