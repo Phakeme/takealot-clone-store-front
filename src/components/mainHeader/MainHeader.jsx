@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import brandLogo from "../../images/takealot-logo.svg";
 import Heart from "../../images/heart.svg";
 import Cart from "../../images/shopping-cart.svg";
@@ -7,18 +8,24 @@ import { NavLink } from "./NavLink";
 import { MyAccounts } from "./MyAccounts";
 import { MobileMainHeader } from "./mobiNavigations/MobileMainHeader";
 import { MobileSideBar } from "./mobiNavigations/MobileSideBar";
+import { increment } from "../../features/cart/cartSlice";
 
 export const MainHeader = () => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
-  const handleOpenSide = () => {
-    setIsSideBarOpen(true);
-  };
-  const handleCloseSide = () => {
-    setIsSideBarOpen(false);
-  };
+  const isSideBarOpen = useSelector((state) => state.sidebarIsOpen.value);
+  const cart = useSelector((state) => state.cart.value);
+  const dispatch = useDispatch();
+
+  // onClick={() => dispatch(openSideBar())}
+  // const handleOpenSide = () => {
+  //   setIsSideBarOpen(true);
+  // };
+  // const handleCloseSide = () => {
+  //   setIsSideBarOpen(false);
+  // };
+
   return (
     <header>
-      {isSideBarOpen && <MobileSideBar handleCloseSide={handleCloseSide} />}
+      {isSideBarOpen && <MobileSideBar />}
       <div className="bg-white h-16">
         <div className="h-full container mx-auto">
           <div className="hidden md:flex h-full flex justify-between items-center">
@@ -50,15 +57,15 @@ export const MainHeader = () => {
                 </div>
 
                 <div className="h-full flex items-center justify-center bg-green-700 rounded-full p-2 text-white cursor-pointer">
-                  <div className="">
-                    <img width="18px" src={Cart} alt="" />
+                  <div className="" onClick={() => dispatch(increment())}>
+                    <img width="18px" src={Cart} alt="cart" />
                   </div>
-                  <div className="pl-2 pr-1">0</div>
+                  <div className="pl-2 pr-1">{cart}</div>
                 </div>
               </div>
             </div>
           </div>
-          <MobileMainHeader handleOpenSide={handleOpenSide} />
+          <MobileMainHeader />
         </div>
       </div>
       <div className="hidden sm:block bg-blue h-20"></div>
