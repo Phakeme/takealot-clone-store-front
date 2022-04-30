@@ -1,13 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { closeSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
 
-export const MobiNavLink = ({ path, label, icon = null, handleCloseSide }) => {
+export const MobiNavLink = ({ path, label, icon = null }) => {
+  const dispatch = useDispatch();
   const cart = label === "Cart";
 
   return (
     <Link to={path}>
       <div
-        onClick={() => handleCloseSide()}
+        onClick={() => dispatch(closeSideBar())}
         className="pl-6 bg-white border-b border-gray-200 h-12 flex items-center text-sm"
       >
         {!icon ? (
