@@ -1,16 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import brandLogo from "../../../images/takealot-logo.svg";
 import Search from "../../../images/search.svg";
 import BlackShoppingCart from "../../../images/black-shopping-cart.svg";
 import Menu from "../../../images/open-menu.svg";
 import { Link } from "react-router-dom";
+import { openSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
 
-export const MobileMainHeader = ({ handleOpenSide }) => {
+export const MobileMainHeader = () => {
+  const dispatch = useDispatch();
   return (
     <div className="flex justify-between items-center mx-2 md:hidden h-full">
       <div
         className="hover: cursor-pointer p-3"
-        onClick={() => handleOpenSide()}
+        onClick={() => dispatch(openSideBar())}
       >
         <img width="20px" src={Menu} alt="open-menu" />
       </div>
