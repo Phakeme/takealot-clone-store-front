@@ -1,13 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { MobiNavLink } from "./MobiNavLink";
 import x from "../../../images/x.svg";
 import brandLogo from "../../../images/takealot-logo.svg";
 import user from "../../../images/user.svg";
+import { closeSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
 
-export const MobileSideBar = ({ handleCloseSide }) => {
+export const MobileSideBar = () => {
   const [navigations, setNavigations] = useState(false);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     axios.get("/navigations").then(function (response) {
       setNavigations(response.data);
@@ -30,12 +34,7 @@ export const MobileSideBar = ({ handleCloseSide }) => {
         <div className="mt-4">
           {navigations?.navLinks?.map(({ path, label, icon }, index) => (
             <div key={index}>
-              <MobiNavLink
-                path={path}
-                label={label}
-                icon={icon}
-                handleCloseSide={handleCloseSide}
-              />
+              <MobiNavLink path={path} label={label} icon={icon} />
             </div>
           ))}
         </div>
@@ -43,8 +42,8 @@ export const MobileSideBar = ({ handleCloseSide }) => {
         <div className="bg-white flex items-center justify-center p-2 text-sm border-b border-gray-200 mt-4">
           <Link to="/login">
             <div
+              onClick={() => dispatch(closeSideBar())}
               className="bg-blue text-white py-2 px-4 flex items-center justify-center rounded-3xl"
-              onClick={() => handleCloseSide()}
             >
               <img width="16px" src={user} alt="user-icon" />
               <div className="ml-2">Login</div>
@@ -53,7 +52,7 @@ export const MobileSideBar = ({ handleCloseSide }) => {
           <Link to="/signup">
             <div
               className="ml-3 text-blue p-1"
-              onClick={() => handleCloseSide()}
+              onClick={() => dispatch(closeSideBar())}
             >
               Register
             </div>
@@ -61,7 +60,7 @@ export const MobileSideBar = ({ handleCloseSide }) => {
         </div>
       </div>
 
-      <div className="p-4" onClick={() => handleCloseSide()}>
+      <div className="p-4" onClick={() => dispatch(closeSideBar())}>
         <img src={x} height="auto" width="15px" alt="cancel-option" />
       </div>
     </div>
