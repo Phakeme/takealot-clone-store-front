@@ -15,14 +15,6 @@ export const MainHeader = () => {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
 
-  // onClick={() => dispatch(openSideBar())}
-  // const handleOpenSide = () => {
-  //   setIsSideBarOpen(true);
-  // };
-  // const handleCloseSide = () => {
-  //   setIsSideBarOpen(false);
-  // };
-
   return (
     <header>
       {isSideBarOpen && <MobileSideBar />}
@@ -68,7 +60,31 @@ export const MainHeader = () => {
           <MobileMainHeader />
         </div>
       </div>
-      <div className="hidden sm:block bg-blue h-20"></div>
+      <div className="hidden sm:block bg-blue h-20">
+        <div className="container mx-auto py-2 h-full">
+          <div className=" grid grid-rows-1 gap-6 grid-cols-[196px,1fr] h-full">
+            <div className=" relative">
+              <div className="absolute w-full bg-red-100">
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+              </div>
+            </div>
+            <div className="bg-green-100 h-full">test</div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
