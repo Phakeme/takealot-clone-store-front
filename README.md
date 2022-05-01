@@ -12,7 +12,7 @@
 
 ### Global Event Handlers
 
-- Conponents = "MainHeader"
+- Conponents = MainHeader
 
 * onMouseEnter()
 * onMouseLeave()
