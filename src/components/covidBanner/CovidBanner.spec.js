@@ -1,7 +1,7 @@
 import { CovidBanner } from "./CovidBanner";
 import { screen, render } from "@testing-library/react";
 
-describe("covid banner renders text correctly", () => {
+describe("covid banner", () => {
   it("renders Stay informed!", () => {
     render(<CovidBanner />);
     expect(screen.getByText(/Stay informed!/)).toBeInTheDocument();
