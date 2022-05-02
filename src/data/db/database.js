@@ -15,9 +15,36 @@ const database = {
       { label: "Lists", path: "/lists", icon: Heart },
     ],
   },
+  heroNavigations: {
+    heroNavLinks: [
+      { label: "Automotive & DIY", path: "/automotive" },
+      { label: "Baby & Toddler", path: "/baby-toddler" },
+      { label: "Beauty", path: "/Beauty" },
+      { label: "Books & Courses", path: "/books-courses" },
+      { label: "Camping & Outdoor", path: "/camping-outdoor" },
+      { label: "Cellphones & Wearables", path: "/cellphones-wearables" },
+      { label: "Fashion & Luggage", path: "/fashion-luggage" },
+      { label: "Computers & Electronics", path: "/computers-electronics" },
+      { label: "Gaming", path: "/gaming" },
+      { label: "Garden, Pool & Patio", path: "/garden-Pool-Patio" },
+      { label: "Groceries & Household", path: "/groceries-household" },
+      { label: "Health & Personal Care", path: "/health-personal-care" },
+      { label: "Liquor", path: "/Liquor" },
+      { label: "Office & Stationery", path: "/office-Stationery" },
+      { label: "Pets", path: "/pets" },
+      { label: "Sport & Training", path: "/sport-training" },
+      { label: "Toys", path: "/toys" },
+      { label: "TV, Audio & Media", path: "/tv-audio-media" },
+    ],
+  },
 };
 
 Mock.onGet("/navigations").reply((config) => {
   const response = database.navigations;
+  return [200, response];
+});
+
+Mock.onGet("/hero-navigations").reply((config) => {
+  const response = database.heroNavigations;
   return [200, response];
 });
