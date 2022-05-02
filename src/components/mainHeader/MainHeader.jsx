@@ -1,7 +1,10 @@
-// import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import brandLogo from "../../images/takealot-logo.svg";
+import downArrowWhite from "../../images/down-arrow-white.svg";
 import Heart from "../../images/heart.svg";
+import TimeWhiteIcon from "../../images/time-white-icon.svg";
 import Cart from "../../images/shopping-cart.svg";
 import { Link } from "react-router-dom";
 import { NavLink } from "./NavLink";
@@ -9,11 +12,19 @@ import { MyAccounts } from "./MyAccounts";
 import { MobileMainHeader } from "./mobiNavigations/MobileMainHeader";
 import { MobileSideBar } from "./mobiNavigations/MobileSideBar";
 import { increment } from "../../features/cart/cartSlice";
+import { HeroNavLink } from "./Hero/HeroNavLink";
 
 export const MainHeader = () => {
+  const [heroNavigations, setHeroNavigations] = useState(false);
   const isSideBarOpen = useSelector((state) => state.sidebarIsOpen.value);
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios.get("/hero-navigations").then(function (response) {
+      setHeroNavigations(response.data);
+    });
+  }, []);
 
   return (
     <header>
@@ -64,21 +75,26 @@ export const MainHeader = () => {
         <div className="container mx-auto py-2 h-full">
           <div className=" grid grid-rows-1 gap-6 grid-cols-[196px,1fr] h-full">
             <div className=" relative">
-              <div className="absolute w-full bg-red-100">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
+              <div className="absolute w-full shadow-lg bg-white text-sm">
+                <div className="bg-gray-700 w-full h-8 text-white flex items-center px-3 text-xs justify-between cursor-pointer">
+                  <span>Shop by Department</span>
+                  <span className="fill-white">
+                    <img width="8px" src={downArrowWhite} alt="" />
+                  </span>
+                </div>
+                <ul className="my-2">
+                  {heroNavigations?.heroNavLinks?.map(({ label, path }) => (
+                    <div key={path}>
+                      <HeroNavLink label={label} path={path} />
+                    </div>
+                  ))}
+                </ul>
+                <div className="bg-green-500 w-full h-8 text-white flex items-center justify-center px-3 text-lg tracking-wide cursor-pointer">
+                  <span className="mr-2">
+                    <img width="13px" src={TimeWhiteIcon} alt="" />
+                  </span>
+                  DAILY DEALS
+                </div>
               </div>
             </div>
             <div className="bg-green-100 h-full">test</div>
