@@ -5,6 +5,7 @@ import brandLogo from "../../images/takealot-logo.svg";
 import downArrowWhite from "../../images/down-arrow-white.svg";
 import Heart from "../../images/heart.svg";
 import TimeWhiteIcon from "../../images/time-white-icon.svg";
+import SearchWhiteIcon from "../../images/search-white-icon.svg";
 import Cart from "../../images/shopping-cart.svg";
 import { Link } from "react-router-dom";
 import { NavLink } from "./NavLink";
@@ -13,6 +14,8 @@ import { MobileMainHeader } from "./mobiNavigations/MobileMainHeader";
 import { MobileSideBar } from "./mobiNavigations/MobileSideBar";
 import { increment } from "../../features/cart/cartSlice";
 import { HeroNavLink } from "./Hero/HeroNavLink";
+import { MainNav } from "./MainNav";
+import { MainNavLink } from "./MainNavLink";
 
 export const MainHeader = () => {
   const [heroNavigations, setHeroNavigations] = useState(false);
@@ -71,10 +74,10 @@ export const MainHeader = () => {
           <MobileMainHeader />
         </div>
       </div>
-      <div className="hidden sm:block bg-blue h-20">
+      <div className="hidden sm:block bg-blue h-[82px]">
         <div className="container mx-auto py-2 h-full">
           <div className=" grid grid-rows-1 gap-6 grid-cols-[196px,1fr] h-full">
-            <div className=" relative">
+            <div className="relative">
               <div className="absolute w-full shadow-lg bg-white text-sm">
                 <div className="bg-gray-700 w-full h-8 text-white flex items-center px-3 text-xs justify-between cursor-pointer">
                   <span>Shop by Department</span>
@@ -97,7 +100,22 @@ export const MainHeader = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-green-100 h-full">test</div>
+            <div className="h-full grid grid-rows-2 gap-2 py-0 text-sm">
+              <div className="bg-white h-full rounded grid grid-cols-[1fr,180px,50px] overflow-hidden">
+                <div className="bg-red-100">form</div>
+                <div className="bg-green-100">form</div>
+                <div className="bg-gray-800 h-full flex justify-center items-center cursor-pointer">
+                  <img width="15px" src={SearchWhiteIcon} alt="search-icon" />
+                </div>
+              </div>
+              <MainNav>
+                {heroNavigations?.heroNavLinks
+                  ?.slice(0, 7)
+                  .map(({ label, path }) => (
+                    <MainNavLink key={path} label={label} path={path} />
+                  ))}
+              </MainNav>
+            </div>
           </div>
         </div>
       </div>
