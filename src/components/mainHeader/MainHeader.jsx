@@ -15,7 +15,7 @@ import { MobileSideBar } from "./mobiNavigations/MobileSideBar";
 import { increment } from "../../features/cart/cartSlice";
 import { HeroNavLink } from "./Hero/HeroNavLink";
 import { MainNav } from "./MainNav";
-import { MainNavLink } from "./MainNavLink";
+import { OptionSelect } from "./OptionSelect";
 
 export const MainHeader = () => {
   const [heroNavigations, setHeroNavigations] = useState(false);
@@ -101,20 +101,22 @@ export const MainHeader = () => {
               </div>
             </div>
             <div className="h-full grid grid-rows-2 gap-2 py-0 text-sm">
-              <div className="bg-white h-full rounded grid grid-cols-[1fr,180px,50px] overflow-hidden">
-                <div className="bg-red-100">form</div>
-                <div className="bg-green-100">form</div>
+              <div className="bg-white h-full rounded grid grid-cols-[1fr,190px,50px] overflow-hidden">
+                <input
+                  className="w-full h-full p-1 pl-2 outline-none"
+                  type="search"
+                  id="site-search"
+                  name="q"
+                  autoComplete="off"
+                  placeholder="Search for products, brands..."
+                />
+
+                <OptionSelect heroNavigations={heroNavigations} />
                 <div className="bg-gray-800 h-full flex justify-center items-center cursor-pointer">
                   <img width="15px" src={SearchWhiteIcon} alt="search-icon" />
                 </div>
               </div>
-              <MainNav>
-                {heroNavigations?.heroNavLinks
-                  ?.slice(0, 7)
-                  .map(({ label, path }) => (
-                    <MainNavLink key={path} label={label} path={path} />
-                  ))}
-              </MainNav>
+              <MainNav heroNavigations={heroNavigations} />
             </div>
           </div>
         </div>
