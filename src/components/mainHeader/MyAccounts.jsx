@@ -20,7 +20,7 @@ export const MyAccounts = () => {
   ];
   const DropDownMenu = () => {
     return (
-      <div className="absolute bg-white top-8 right-1 w-40 py-1 drop-shadow-md">
+      <div className="absolute bg-white top-8 right-1 w-40 z-40 py-1 drop-shadow-md">
         <ul>
           {data.map(({ label, path }, index) => (
             <li key={index}>
