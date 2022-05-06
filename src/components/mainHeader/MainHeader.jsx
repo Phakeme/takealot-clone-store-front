@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import brandLogo from "../../images/takealot-logo.svg";
+import BrandLogo from "../../images/takealot-logo.svg";
 import downArrowWhite from "../../images/down-arrow-white.svg";
 import Heart from "../../images/heart.svg";
 import TimeWhiteIcon from "../../images/time-white-icon.svg";
@@ -32,7 +32,7 @@ export const MainHeader = () => {
   return (
     <header>
       {isSideBarOpen && <MobileSideBar />}
-      <div className="bg-white h-16">
+      <div className="bg-white h-[60px]">
         <div className="h-full container mx-auto">
           <div className="hidden md:flex h-full flex justify-between items-center">
             <div className="flex">
@@ -40,7 +40,8 @@ export const MainHeader = () => {
                 <img
                   className="mr-6"
                   width="180px"
-                  src={brandLogo}
+                  height="auto"
+                  src={BrandLogo}
                   alt="codealot-brand"
                 />
               </Link>
