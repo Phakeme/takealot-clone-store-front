@@ -8,7 +8,7 @@ import {
 
 export const HomeContainer = () => (
   <>
-    <section className="container mx-auto">
+    <section className="container mx-auto" data-testid="home-page">
       <div className="grid grid-cols-[198px,1fr,300px] gap-6 h-[440px] mt-5">
         <div />
         <div className="">
@@ -26,9 +26,6 @@ export const HomeContainer = () => (
         </div>
       </div>
     </section>
-    <div className="bg-gray-100 h-72">
-      {/* <LogoCarousel /> */}
-      test
-    </div>
+    <div className="bg-gray-100 h-72">test</div>
   </>
 );
