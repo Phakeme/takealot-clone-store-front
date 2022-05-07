@@ -24,9 +24,14 @@ export const MainHeader = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get("/hero-navigations").then(function (response) {
-      setHeroNavigations(response.data);
-    });
+    axios
+      .get("/hero-navigations")
+      .then(function (response) {
+        setHeroNavigations(response.data);
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
   }, []);
 
   return (
