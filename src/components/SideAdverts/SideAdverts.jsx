@@ -5,7 +5,12 @@ export const SideAdverts = () => {
   const [adverts, setAdverts] = useState(null);
 
   useEffect(() => {
-    axios.get("/adverts").then((response) => setAdverts(response.data));
+    axios
+      .get("/adverts")
+      .then((response) => setAdverts(response.data))
+      .catch((error) => {
+        //  console.log(error);
+      });
   }, []);
 
   return (
