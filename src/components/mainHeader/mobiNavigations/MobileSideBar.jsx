@@ -13,9 +13,14 @@ export const MobileSideBar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get("/navigations").then(function (response) {
-      setNavigations(response.data);
-    });
+    axios
+      .get("/navigations")
+      .then(function (response) {
+        setNavigations(response.data);
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
   }, []);
 
   return (
