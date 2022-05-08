@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { MobiNavLink } from "./MobiNavLink";
+import { useDispatch } from "react-redux";
 import x from "../../../images/x.svg";
 import brandLogo from "../../../images/takealot-logo.svg";
 import user from "../../../images/user.svg";
+import { MobiNavLink } from "./MobiNavLink";
 import { closeSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
 
 export const MobileSideBar = () => {
