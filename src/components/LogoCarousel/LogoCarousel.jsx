@@ -14,7 +14,7 @@ export const LogoCarousel = () => {
   ];
 
   return (
-    <div className="h-[62px] grid grid-cols-3 gap-3 bg-white drop-shadow-md">
+    <div className="h-[61px] grid grid-cols-3 gap-3 bg-gray-100">
       {data?.map(({ path, image }, index) => (
         <a key={index} href={path} target="_blank" rel="noreferrer">
           <div className="flex justify-center items-center h-full">
