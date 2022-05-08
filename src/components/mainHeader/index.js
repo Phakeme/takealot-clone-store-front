@@ -1,13 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import SearchWhiteIcon from "../../images/search-white-icon.svg";
 import { MobileSideBar } from "./mobiNavigations";
 import { MobileMainHeader } from "./mobiNavigations/MobileMainHeader";
 import { PagesTopNavigation } from "./PagesTopNavigation";
 import { CategoryTopNav } from "./CategoryTopNav";
 import { SideBarCategoryNavigations } from "./SideBarCategoryNavigations";
-import { OptionSelect } from "./OptionSelect";
+import { SearchBox } from "../SearchBox";
 
 export const MainHeader = () => {
   const [heroNavigations, setHeroNavigations] = useState(false);
@@ -27,7 +26,7 @@ export const MainHeader = () => {
   return (
     <header>
       {isSideBarOpen && <MobileSideBar />}
-      <div className="h-full bg-white h-[60px] container mx-auto">
+      <div className="h-full h-[60px] container mx-auto bg-white">
         <PagesTopNavigation />
         <MobileMainHeader />
       </div>
@@ -37,21 +36,7 @@ export const MainHeader = () => {
             <SideBarCategoryNavigations heroNavigations={heroNavigations} />
 
             <div className="h-full grid grid-rows-2 gap-2 py-0 text-sm">
-              <div className="bg-white h-full rounded grid grid-cols-[1fr,190px,50px] overflow-hidden">
-                <input
-                  className="w-full h-full p-1 pl-2 outline-none"
-                  type="search"
-                  id="site-search"
-                  name="q"
-                  autoComplete="off"
-                  placeholder="Search for products, brands..."
-                />
-
-                <OptionSelect heroNavigations={heroNavigations} />
-                <div className="bg-gray-800 h-full flex justify-center items-center cursor-pointer">
-                  <img width="15px" src={SearchWhiteIcon} alt="search-icon" />
-                </div>
-              </div>
+              <SearchBox heroNavigations={heroNavigations} />
               <CategoryTopNav heroNavigations={heroNavigations} />
             </div>
           </div>
