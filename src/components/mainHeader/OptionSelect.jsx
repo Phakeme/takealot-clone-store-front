@@ -2,7 +2,7 @@ import React from "react";
 
 export const OptionSelect = ({ heroNavigations }) => {
   return (
-    <div className="relative w-full z-10">
+    <div className="relative w-full z-10 hidden sm:block">
       <div className="absolute w-full h-full">
         <select
           id="pet-select"
