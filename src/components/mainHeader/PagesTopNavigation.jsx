@@ -12,7 +12,7 @@ export const PagesTopNavigation = () => {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
   return (
-    <div className="hidden lg:flex h-full flex justify-between items-center">
+    <div className="hidden sm:flex h-full flex justify-between items-center">
       <div className="flex">
         <Link to="/">
           <img
@@ -23,7 +23,7 @@ export const PagesTopNavigation = () => {
             alt="codealot-brand"
           />
         </Link>
-        <div className="flex items-center divide-x">
+        <div className="hidden lg:flex items-center divide-x">
           <PagesTopNavSingleLink path="/help" label="Help" />
           <PagesTopNavSingleLink path="/sell" label="Sell on Takealot" />
         </div>
