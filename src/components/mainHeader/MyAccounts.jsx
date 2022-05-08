@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { NavLink } from "./NavLink";
+import { PagesTopNavSingleLink } from "./PagesTopNavSingleLink";
 
 import ArrowDown from "../../images/arrow-down.svg";
 import ArrowUp from "../../images/arrow-up.svg";
@@ -24,7 +24,7 @@ export const MyAccounts = () => {
         <ul>
           {data.map(({ label, path }, index) => (
             <li key={index}>
-              <NavLink label={label} path={path} />
+              <PagesTopNavSingleLink label={label} path={path} />
             </li>
           ))}
         </ul>
