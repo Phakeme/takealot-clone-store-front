@@ -1,5 +1,5 @@
 import { CovidBanner } from "./covidBanner/CovidBanner";
-import { MainHeader } from "./mainHeader/MainHeader";
+import { MainHeader } from "./mainHeader";
 import { CheckOrderBanner } from "./CheckOrderBanner/CheckOrderBanner";
 import { SideAdverts } from "./SideAdverts/SideAdverts";
 import { MainCarousel } from "./MainCarousel/MainCarousel";
