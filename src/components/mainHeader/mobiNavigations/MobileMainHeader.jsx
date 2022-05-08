@@ -10,7 +10,7 @@ import { openSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
 export const MobileMainHeader = () => {
   const dispatch = useDispatch();
   return (
-    <div className="flex justify-between items-center mx-2 md:hidden h-full">
+    <div className="lg:hidden flex justify-between items-center mx-2  h-full">
       <div
         className="hover: cursor-pointer p-3"
         onClick={() => dispatch(openSideBar())}
