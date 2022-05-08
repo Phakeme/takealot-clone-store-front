@@ -6,6 +6,9 @@ module.exports = {
         blue: "#0b79bf",
       },
     },
+    container: {
+      padding: "1rem",
+    },
   },
   plugins: [],
 };
