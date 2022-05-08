@@ -9,8 +9,8 @@ import {
 export const HomeContainer = () => (
   <>
     <section className="container mx-auto" data-testid="home-page">
-      <div className="grid grid-cols-[198px,1fr,300px] gap-6 h-[440px] mt-5">
-        <div />
+      <div className="grid grid-cols-1 md:grid-cols-[1fr,300px] lg:grid-cols-[198px,1fr,300px] gap-6 h-[440px] mt-0 md:mt-5">
+        <div className="hidden lg:block" />
         <div className="">
           <MainCarousel />
           <div className="flex flex-col">
@@ -20,7 +20,7 @@ export const HomeContainer = () => (
             <LogoCarousel />
           </div>
         </div>
-        <div className="w-full relative">
+        <div className="hidden md:block w-full relative">
           <CheckOrderBanner />
           <SideAdverts />
         </div>
