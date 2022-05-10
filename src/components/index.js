@@ -4,6 +4,8 @@ import { CheckOrderBanner } from "./CheckOrderBanner/CheckOrderBanner";
 import { SideAdverts } from "./SideAdverts/SideAdverts";
 import { MainCarousel } from "./MainCarousel/MainCarousel";
 import { LogoCarousel } from "./LogoCarousel/LogoCarousel";
+import { ProductsPreviews } from "./Products/ProductsPreviews";
+import { ProductCard } from "./Products/ProductCard";
 export {
   CovidBanner,
   MainHeader,
@@ -11,4 +13,6 @@ export {
   SideAdverts,
   MainCarousel,
   LogoCarousel,
+  ProductsPreviews,
+  ProductCard,
 };
