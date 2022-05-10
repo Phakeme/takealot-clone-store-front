@@ -1,19 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import commerce from "../lip/commerce";
 import {
   CheckOrderBanner,
   SideAdverts,
   MainCarousel,
   LogoCarousel,
+  ProductsPreviews,
+  ProductCard,
 } from "../components";
-import { fetchProducts } from "../features/products/productsSlice";
-import { useSelector, useDispatch } from "react-redux";
 
 export const HomeContainer = () => {
-  const products = useSelector((state) => state.appProducts.value);
-  const dispatch = useDispatch();
-
+  const [, setProducts] = useState([]);
+  const fakeData = [
+    { id: 1, label: "Product 1" },
+    { id: 2, label: "Product 2" },
+    { id: 3, label: "Product 3" },
+  ];
   useEffect(() => {
-    dispatch(fetchProducts());
+    if (localStorage.getItem("products") === null) {
+      commerce.products
+        .list()
+        .then((products) => {
+          setProducts(products.data);
+          localStorage.setItem("products", JSON.stringify(products.data));
+        })
+        .catch((error) => {
+          console.log("There was an error fetching the products", error);
+        });
+    } else {
+      setProducts(JSON.parse(localStorage.getItem("products")));
+    }
   }, []);
 
   return (
@@ -36,7 +52,22 @@ export const HomeContainer = () => {
           </div>
         </div>
       </section>
-      <div className="bg-gray-100 h-72">test</div>
+      <div className="bg-gray-100">
+        <div className="container mx-auto">
+          <ProductsPreviews
+            products={fakeData}
+            labelText="Shop These Laptop Deals"
+          >
+            <ProductCard />
+          </ProductsPreviews>
+          <ProductsPreviews
+            products={fakeData}
+            labelText="Shop These Laptop Deals"
+          >
+            <ProductCard />
+          </ProductsPreviews>
+        </div>
+      </div>
     </>
   );
 };
