@@ -6,7 +6,6 @@ import {
   MainCarousel,
   LogoCarousel,
   ProductsPreviews,
-  ProductCard,
 } from "../components";
 
 export const HomeContainer = () => {
@@ -52,20 +51,24 @@ export const HomeContainer = () => {
           </div>
         </div>
       </section>
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 pb-4">
         <div className="container mx-auto">
           <ProductsPreviews
             products={fakeData}
             labelText="Shop These Laptop Deals"
-          >
-            <ProductCard />
-          </ProductsPreviews>
+          />
           <ProductsPreviews
             products={fakeData}
             labelText="Shop These Laptop Deals"
-          >
-            <ProductCard />
-          </ProductsPreviews>
+          />
+          <ProductsPreviews
+            products={fakeData}
+            labelText="Shop These Laptop Deals"
+          />
+          <ProductsPreviews
+            products={fakeData}
+            labelText="Shop These Laptop Deals"
+          />
         </div>
       </div>
     </>
