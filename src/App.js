@@ -1,8 +1,7 @@
 import { HomeContainer } from "./pages/HomeContainer";
 import { HelpContainer } from "./pages/HelpContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CovidBanner } from "./components";
-import { MainHeader } from "./components";
+import { MainHeader, CovidBanner, Footer } from "./components";
 
 function App() {
   return (
@@ -14,6 +13,7 @@ function App() {
           <Route exact path="/" element={<HomeContainer />}></Route>
           <Route exact path="/help" element={<HelpContainer />}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
