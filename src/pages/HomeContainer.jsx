@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import commerce from "../lip/commerce";
+import React, { useEffect } from "react";
+import { useChecResultContext } from "../Context/ChecContextProvider";
 import {
   CheckOrderBanner,
   SideAdverts,
@@ -9,27 +9,24 @@ import {
 } from "../components";
 
 export const HomeContainer = () => {
-  const [, setProducts] = useState([]);
-  const fakeData = [
-    { id: 1, label: "Product 1" },
-    { id: 2, label: "Product 2" },
-    { id: 3, label: "Product 3" },
-  ];
-  useEffect(() => {
-    if (localStorage.getItem("products") === null) {
-      commerce.products
-        .list()
-        .then((products) => {
-          setProducts(products.data);
-          localStorage.setItem("products", JSON.stringify(products.data));
-        })
-        .catch((error) => {
-          console.log("There was an error fetching the products", error);
-        });
-    } else {
-      setProducts(JSON.parse(localStorage.getItem("products")));
+  const { products, getProducts, categories } = useChecResultContext();
+
+  useEffect(() => getProducts(), []);
+
+  const displayTextLabel = (textLabel) => {
+    let dynamicLabel;
+    switch (textLabel) {
+      case "beauty":
+        dynamicLabel = "Top Beauty Essentials";
+        break;
+      case "computers-electronics":
+        dynamicLabel = "Shop These Electronics Deals";
+        break;
+      default:
+        break;
     }
-  }, []);
+    return dynamicLabel;
+  };
 
   return (
     <>
@@ -53,22 +50,15 @@ export const HomeContainer = () => {
       </section>
       <div className="bg-gray-100 pb-4">
         <div className="container mx-auto">
-          <ProductsPreviews
-            products={fakeData}
-            labelText="Shop These Laptop Deals"
-          />
-          <ProductsPreviews
-            products={fakeData}
-            labelText="Shop These Laptop Deals"
-          />
-          <ProductsPreviews
-            products={fakeData}
-            labelText="Shop These Laptop Deals"
-          />
-          <ProductsPreviews
-            products={fakeData}
-            labelText="Shop These Laptop Deals"
-          />
+          {categories.map((catergory) => (
+            <ProductsPreviews
+              key={catergory}
+              products={products?.filter(
+                (product) => product?.categories[0]?.slug === catergory
+              )}
+              labelText={displayTextLabel(catergory)}
+            />
+          ))}
         </div>
       </div>
     </>
