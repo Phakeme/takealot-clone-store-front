@@ -16,9 +16,9 @@ export const ProductsPreviews = ({ products, labelText }) => {
       </div>
       <div className="" />
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:h-[280px] xl:h-[344px]">
-        {products?.map(({ id, label }) => (
-          <div key={id}>
-            <ProductCard />
+        {products?.slice(0, 3).map((product) => (
+          <div key={product.id}>
+            <ProductCard product={product} />
           </div>
         ))}
       </div>
