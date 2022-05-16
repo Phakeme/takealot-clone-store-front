@@ -45,7 +45,7 @@ const database = {
     { path: "/liquor", image: AdvertLiquor, label: "liquor" },
     { path: "/liquor", image: AdvertHome, label: "home" },
     { path: "/liquor", image: AdvertGardena, label: "gardena" },
-    { path: "/liquor", image: AdvertPhones, label: "phones" },
+    // { path: "/liquor", image: AdvertPhones, label: "phones" },
   ],
 };
 
