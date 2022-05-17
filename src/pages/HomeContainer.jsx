@@ -10,7 +10,7 @@ import {
 
 export const HomeContainer = () => {
   const { products, getProducts, categories } = useChecResultContext();
-
+  // eslint-disable-next-line
   useEffect(() => getProducts(), []);
 
   const displayTextLabel = (textLabel) => {
@@ -31,7 +31,7 @@ export const HomeContainer = () => {
   return (
     <>
       <section className="container mx-auto" data-testid="home-page">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr,300px] lg:grid-cols-[198px,1fr,300px] gap-6 h-[440px] mt-0 md:mt-5">
+        <div className="grid grid-cols-1  lg:grid-cols-[198px,1fr,300px] gap-6 h-[440px] mt-0 md:mt-5">
           <div className="hidden lg:block" />
           <div className="">
             <MainCarousel />
@@ -42,13 +42,13 @@ export const HomeContainer = () => {
               <LogoCarousel />
             </div>
           </div>
-          <div className="hidden md:block w-full relative">
+          <div className="hidden lg:block w-full relative">
             <CheckOrderBanner />
             <SideAdverts />
           </div>
         </div>
       </section>
-      <div className="bg-gray-100 pb-4">
+      <section className="bg-gray-100 pb-4">
         <div className="container mx-auto">
           {categories.map((catergory) => (
             <ProductsPreviews
@@ -60,7 +60,7 @@ export const HomeContainer = () => {
             />
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 };
