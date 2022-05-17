@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const ProductsPreviews = ({ products, labelText }) => {
   return (
-    <div className="grid pb-3 grid-cols-1 md:grid-cols-[1fr,325px]">
+    <div className="grid pb-3 grid-cols-1 lg:grid-cols-[1fr,325px]">
       <div className="py-3 flex justify-between items-center text-base lg:text-2xl font-bold">
         <h2 className="">{labelText}</h2>
         <Link to="/products">
@@ -15,7 +15,7 @@ export const ProductsPreviews = ({ products, labelText }) => {
         </Link>
       </div>
       <div className="" />
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:h-[280px] xl:h-[344px]">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:h-[280px] xl:h-[344px]">
         {products?.slice(0, 3).map((product) => (
           <div key={product.id}>
             <ProductCard product={product} />
