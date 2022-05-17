@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const FooterModule = ({ footerModule }) => {
   return (
-    <div>
+    <div className="hidden lg:block">
       <h3 className="font-bold mb-2">{footerModule.title}</h3>
       <ul>
         {footerModule?.footerLinks?.map((item, index) => (
