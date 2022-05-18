@@ -7,6 +7,7 @@ import { LogoCarousel } from "./LogoCarousel/LogoCarousel";
 import { ProductsPreviews } from "./Products/ProductsPreviews";
 import { ProductCard } from "./Products/ProductCard";
 import { Footer } from "./Footer";
+import { LoaderSpinner } from "./Utils/LoaderSpinner";
 export {
   CovidBanner,
   MainHeader,
@@ -17,4 +18,5 @@ export {
   ProductsPreviews,
   ProductCard,
   Footer,
+  LoaderSpinner,
 };
