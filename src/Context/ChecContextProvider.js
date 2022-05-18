@@ -5,6 +5,7 @@ const ChecResultContext = createContext();
 export const ChecContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [isProductsLoading, setIsProductsLoading] = useState(false);
 
   // Save Catergories in an Array State
   const createCatergories = (products) => {
@@ -18,6 +19,7 @@ export const ChecContextProvider = ({ children }) => {
   };
 
   const getProducts = () => {
+    setIsProductsLoading(true);
     if (localStorage.getItem("products") === null) {
       commerce.products
         .list()
@@ -27,19 +29,25 @@ export const ChecContextProvider = ({ children }) => {
           if (products.data) {
             createCatergories(products.data);
           }
+          setIsProductsLoading(false);
         })
         .catch((error) => {
           console.log("There was an error fetching the products", error);
+          setIsProductsLoading(false);
         });
     } else {
       setProducts(JSON.parse(localStorage.getItem("products")));
       if (products) {
         createCatergories(JSON.parse(localStorage.getItem("products")));
       }
+      setIsProductsLoading(false);
     }
   };
-  const getSingleProduct = (id) => {
-    console.log(id, "From getSingleProduct Context");
+  const getSingleProduct = (productId) => {
+    // Retrieve a product by it's ID
+    commerce.products
+      .retrieve(productId)
+      .then((product) => console.log(product));
   };
   return (
     <ChecResultContext.Provider
@@ -48,6 +56,7 @@ export const ChecContextProvider = ({ children }) => {
         products,
         categories,
         getSingleProduct,
+        isProductsLoading,
       }}
     >
       {children}
