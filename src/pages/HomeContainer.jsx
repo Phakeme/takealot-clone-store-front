@@ -6,10 +6,13 @@ import {
   MainCarousel,
   LogoCarousel,
   ProductsPreviews,
+  LoaderSpinner,
 } from "../components";
 
 export const HomeContainer = () => {
-  const { products, getProducts, categories } = useChecResultContext();
+  const { products, getProducts, categories, isProductsLoading } =
+    useChecResultContext();
+
   // eslint-disable-next-line
   useEffect(() => getProducts(), []);
 
@@ -50,15 +53,29 @@ export const HomeContainer = () => {
       </section>
       <section className="bg-gray-100 pb-4">
         <div className="container mx-auto">
-          {categories.map((catergory) => (
-            <ProductsPreviews
-              key={catergory}
-              products={products?.filter(
-                (product) => product?.categories[0]?.slug === catergory
-              )}
-              labelText={displayTextLabel(catergory)}
-            />
-          ))}
+          <div className="grid pb-3 grid-cols-1 lg:grid-cols-[1fr,325px]">
+            {isProductsLoading ? (
+              <>
+                {" "}
+                <div className="bg-white mt-7 lg:mt-2 flex justify-center items-center h-[300px] lg:h-[700px] animate-pulse">
+                  <LoaderSpinner />
+                </div>
+                <div />
+              </>
+            ) : (
+              <div className="">
+                {categories.map((catergory) => (
+                  <ProductsPreviews
+                    key={catergory}
+                    products={products?.filter(
+                      (product) => product?.categories[0]?.slug === catergory
+                    )}
+                    labelText={displayTextLabel(catergory)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </section>
     </>
