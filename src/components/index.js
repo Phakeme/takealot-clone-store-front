@@ -8,6 +8,8 @@ import { ProductsPreviews } from "./Products/ProductsPreviews";
 import { ProductCard } from "./Products/ProductCard";
 import { Footer } from "./Footer";
 import { LoaderSpinner } from "./Utils/LoaderSpinner";
+import { ScrollToTop } from "./Utils/ScrollToTop";
+
 export {
   CovidBanner,
   MainHeader,
@@ -19,4 +21,5 @@ export {
   ProductCard,
   Footer,
   LoaderSpinner,
+  ScrollToTop,
 };
