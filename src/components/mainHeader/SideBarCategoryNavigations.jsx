@@ -20,16 +20,17 @@ export const SideBarCategoryNavigations = ({ heroNavigations }) => {
     if (location.pathname === "/") {
       return;
     }
-    setIsOpen(false);
+    // setIsOpen(false);
+    setIsOpen(!isOpen);
   };
   return (
-    <div
-      className="relative hidden lg:block"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => handleMouseOut()}
-    >
+    <div className="relative hidden lg:block">
       <div className=" absolute w-full shadow-lg bg-white text-sm">
-        <div className="bg-gray-700 w-full h-8 text-white flex items-center px-3 text-xs justify-between cursor-pointer">
+        <div
+          className="bg-gray-700 w-full h-8 text-white flex items-center px-3 text-xs justify-between cursor-pointer"
+          // onClick={() => setIsOpen(!isOpen)}
+          onClick={() => handleMouseOut()}
+        >
           <span>Shop by Department</span>
           <span className="fill-white">
             <img width="8px" src={downArrowWhite} alt="" />
