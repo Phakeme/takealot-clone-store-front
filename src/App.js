@@ -1,11 +1,12 @@
-import { HomeContainer, HelpContainer, ProductContainer } from "./pages";
+import { HomeContainer, HelpContainer, SingleProductContainer } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MainHeader, CovidBanner, Footer } from "./components";
+import { MainHeader, CovidBanner, Footer, ScrollToTop } from "./components";
 
 function App() {
   return (
     <div className="text-gray-700">
       <BrowserRouter>
+        <ScrollToTop />
         <CovidBanner />
         <MainHeader />
         <Routes>
@@ -14,7 +15,7 @@ function App() {
           <Route
             exact
             path="/product/:productId"
-            element={<ProductContainer />}
+            element={<SingleProductContainer />}
           ></Route>
         </Routes>
         <Footer />
