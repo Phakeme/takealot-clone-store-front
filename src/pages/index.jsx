@@ -1,4 +1,4 @@
 import { HomeContainer } from "./HomeContainer";
 import { HelpContainer } from "./HelpContainer";
-import { ProductContainer } from "./ProductContainer";
-export { HomeContainer, HelpContainer, ProductContainer };
+import { SingleProductContainer } from "./SingleProductContainer";
+export { HomeContainer, HelpContainer, SingleProductContainer };
