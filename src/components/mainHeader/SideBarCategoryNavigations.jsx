@@ -24,7 +24,7 @@ export const SideBarCategoryNavigations = ({ heroNavigations }) => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="relative hidden lg:block">
+    <div className="relative hidden lg:block z-20">
       <div className=" absolute w-full shadow-lg bg-white text-sm">
         <div
           className="bg-gray-700 w-full h-8 text-white flex items-center px-3 text-xs justify-between cursor-pointer"
