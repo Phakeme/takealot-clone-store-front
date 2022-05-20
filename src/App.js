@@ -1,4 +1,9 @@
-import { HomeContainer, HelpContainer, SingleProductContainer } from "./pages";
+import {
+  HomeContainer,
+  HelpContainer,
+  SingleProductContainer,
+  LoginContainer,
+} from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainHeader, CovidBanner, Footer, ScrollToTop } from "./components";
 
@@ -12,6 +17,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomeContainer />}></Route>
           <Route exact path="/help" element={<HelpContainer />}></Route>
+          <Route exact path="/login" element={<LoginContainer />}></Route>
           <Route
             exact
             path="/product/:productId"
