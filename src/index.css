@@ -7,3 +7,7 @@
     font-family: sans-serif, "Helvetica Neue", system-ui;
   }
 }
+
+.selected {
+  border: 1px solid rgb(231, 231, 231) !important;
+}
