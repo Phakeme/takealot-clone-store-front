@@ -9,6 +9,8 @@ import { ProductCard } from "./Products/ProductCard";
 import { Footer } from "./Footer";
 import { LoaderSpinner } from "./Utils/LoaderSpinner";
 import { ScrollToTop } from "./Utils/ScrollToTop";
+import { PriceDisplay } from "./SingleProduct/PriceDisplay";
+import { MainProductDisplay } from "./SingleProduct/MainProductDisplay";
 
 export {
   CovidBanner,
@@ -22,4 +24,6 @@ export {
   Footer,
   LoaderSpinner,
   ScrollToTop,
+  PriceDisplay,
+  MainProductDisplay,
 };
