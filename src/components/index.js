@@ -11,6 +11,7 @@ import { LoaderSpinner } from "./Utils/LoaderSpinner";
 import { ScrollToTop } from "./Utils/ScrollToTop";
 import { PriceDisplay } from "./SingleProduct/PriceDisplay";
 import { MainProductDisplay } from "./SingleProduct/MainProductDisplay";
+import { ProductDescription } from "./SingleProduct/ProductDescription";
 
 export {
   CovidBanner,
@@ -26,4 +27,5 @@ export {
   ScrollToTop,
   PriceDisplay,
   MainProductDisplay,
+  ProductDescription,
 };
