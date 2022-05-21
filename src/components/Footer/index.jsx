@@ -30,10 +30,10 @@ export const Footer = () => {
         {catergories?.heroNavLinks?.map((item, index) => (
           <Link
             className="text-blue hover:underline mr-2 pr-2 text-xs"
-            to={item.path}
+            to={item?.path}
             key={index}
           >
-            {item.label}
+            {item?.label}
           </Link>
         ))}
       </div>
