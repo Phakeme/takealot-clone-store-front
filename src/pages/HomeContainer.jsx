@@ -6,6 +6,7 @@ import {
   MainCarousel,
   LogoCarousel,
   ProductsPreviews,
+  ProductCard,
   LoaderSpinner,
 } from "../components";
 
@@ -56,22 +57,31 @@ export const HomeContainer = () => {
           <div className="grid pb-3 grid-cols-1 lg:grid-cols-[1fr,325px]">
             {isProductsLoading ? (
               <>
-                {" "}
                 <div className="bg-white mt-7 lg:mt-2 flex justify-center items-center h-[300px] lg:h-[700px] animate-pulse">
                   <LoaderSpinner />
                 </div>
                 <div />
               </>
             ) : (
-              <div className="">
+              <div>
                 {categories.map((catergory) => (
                   <ProductsPreviews
                     key={catergory}
-                    products={products?.filter(
-                      (product) => product?.categories[0]?.slug === catergory
-                    )}
                     labelText={displayTextLabel(catergory)}
-                  />
+                  >
+                    {products
+                      ?.filter(
+                        (product) => product?.categories[0]?.slug === catergory
+                      )
+                      ?.slice(0, 3)
+                      .map((item) => (
+                        <div key={item.id}>
+                          <div className="h-full">
+                            <ProductCard product={item} />
+                          </div>
+                        </div>
+                      ))}
+                  </ProductsPreviews>
                 ))}
               </div>
             )}
