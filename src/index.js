@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+//import "regenerator-runtime/runtime";
 import App from "./App";
 import "./data";
 import store from "./app/app";
