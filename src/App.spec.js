@@ -1,14 +1,18 @@
+//import "regenerator-runtime/runtime";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import store from "./app/app";
 import { Provider } from "react-redux";
+import { ChecContextProvider } from "./Context/ChecContextProvider";
 
 describe("Routing", () => {
   const setup = (path) => {
     window.history.pushState({}, "", path);
     render(
       <Provider store={store}>
-        <App />
+        <ChecContextProvider>
+          <App />
+        </ChecContextProvider>
       </Provider>
     );
   };
