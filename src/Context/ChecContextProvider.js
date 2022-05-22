@@ -5,7 +5,7 @@ const ChecResultContext = createContext();
 export const ChecContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [isProductsLoading, setIsProductsLoading] = useState(false);
+  const [isProductsLoading, setIsProductsLoading] = useState(true);
   const [singleProduct, setSingleProduct] = useState(null);
   const [isSingleProductLoading, setIsSingleProductLoading] = useState(false);
 
@@ -49,7 +49,9 @@ export const ChecContextProvider = ({ children }) => {
   // Retrieve a product by it's ID
   const getSingleProduct = (productId) => {
     setIsSingleProductLoading(true);
-    const localProductId = JSON.parse(localStorage.getItem("singleProduct")).id;
+    let localProductId = JSON.parse(localStorage.getItem("singleProduct"));
+
+    if (localProductId !== null) localProductId = localProductId.id;
 
     if (
       (localStorage.getItem("singleProduct") === null) |
