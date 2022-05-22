@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import commerce from "../lip/commerce";
 const ChecResultContext = createContext();
 
@@ -8,6 +8,12 @@ export const ChecContextProvider = ({ children }) => {
   const [isProductsLoading, setIsProductsLoading] = useState(true);
   const [singleProduct, setSingleProduct] = useState(null);
   const [isSingleProductLoading, setIsSingleProductLoading] = useState(false);
+  const [isCartLoading, setIsCartLoading] = useState(false);
+  const [cart, setCart] = useState({});
+
+  useEffect(() => {
+    commerce.cart.retrieve().then((cart) => setCart(cart));
+  }, []);
 
   // Save Catergories in an Array State
   const createCatergories = (products) => {
@@ -75,6 +81,20 @@ export const ChecContextProvider = ({ children }) => {
       setIsSingleProductLoading(false);
     }
   };
+
+  const addToCart = (productId) => {
+    setIsCartLoading(true);
+    commerce.cart
+      .add(productId, 1)
+      .then(({ cart }) => {
+        setIsCartLoading(false);
+        setCart(cart, console.log(cart, "AddToCart Cart"));
+      })
+      .catch(({ data }) => {
+        setIsCartLoading(false);
+      });
+  };
+
   return (
     <ChecResultContext.Provider
       value={{
@@ -85,6 +105,9 @@ export const ChecContextProvider = ({ children }) => {
         isProductsLoading,
         singleProduct,
         isSingleProductLoading,
+        addToCart,
+        isCartLoading,
+        cart,
       }}
     >
       {children}
