@@ -56,12 +56,7 @@ export const HomeContainer = () => {
         <div className="container mx-auto">
           <div className="grid pb-3 grid-cols-1 lg:grid-cols-[1fr,325px]">
             {isProductsLoading ? (
-              <>
-                <div className="bg-white mt-7 lg:mt-2 flex justify-center items-center h-[300px] lg:h-[700px] animate-pulse">
-                  <LoaderSpinner />
-                </div>
-                <div />
-              </>
+              <LoaderSpinner />
             ) : (
               <div>
                 {categories.map((catergory) => (
