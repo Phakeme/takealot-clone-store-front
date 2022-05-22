@@ -10,7 +10,7 @@ import { Footer } from "./Footer";
 import { LoaderSpinner } from "./Utils/LoaderSpinner";
 import { ScrollToTop } from "./Utils/ScrollToTop";
 import { PriceDisplay } from "./SingleProduct/PriceDisplay";
-import { MainProductDisplay } from "./SingleProduct/MainProductDisplay";
+import { MainProductDisplay } from "./SingleProduct";
 import { ProductDescription } from "./SingleProduct/ProductDescription";
 
 export {
