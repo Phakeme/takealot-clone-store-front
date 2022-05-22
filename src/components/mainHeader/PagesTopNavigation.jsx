@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import BrandLogo from "../../images/takealot-logo.svg";
-import Cart from "../../images/shopping-cart.svg";
+import CartIcon from "../../images/shopping-cart.svg";
 import Heart from "../../images/heart.svg";
 import { PagesTopNavSingleLink } from "./PagesTopNavSingleLink";
 import { MyAccounts } from "./MyAccounts";
-import { increment } from "../../features/cart/cartSlice";
+import { useChecResultContext } from "../../Context/ChecContextProvider";
 
 export const PagesTopNavigation = () => {
-  const cart = useSelector((state) => state.cart.value);
-  const dispatch = useDispatch();
+  const {
+    cart: { total_items },
+  } = useChecResultContext();
+
   return (
     <div className="hidden sm:flex h-full flex justify-between items-center">
       <div className="flex">
@@ -41,12 +42,16 @@ export const PagesTopNavigation = () => {
             <img width="17px" src={Heart} alt="" />
           </div>
 
-          <div className="h-full flex items-center justify-center bg-green-700 rounded-full p-2 text-white cursor-pointer">
-            <div className="" onClick={() => dispatch(increment())}>
-              <img width="18px" src={Cart} alt="cart" />
+          <Link to="/cart">
+            <div className="h-full flex items-center justify-center bg-green-700 rounded-full p-2 text-white cursor-pointer">
+              <div className="">
+                <img width="18px" src={CartIcon} alt="cart" />
+              </div>
+              <div className="pl-2 pr-1">
+                {total_items ? <span>{total_items}</span> : <span>0</span>}
+              </div>
             </div>
-            <div className="pl-2 pr-1">{cart}</div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
