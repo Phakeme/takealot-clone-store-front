@@ -12,6 +12,8 @@ import { ScrollToTop } from "./Utils/ScrollToTop";
 import { PriceDisplay } from "./SingleProduct/PriceDisplay";
 import { MainProductDisplay } from "./SingleProduct";
 import { ProductDescription } from "./SingleProduct/ProductDescription";
+import { CartSummary } from "./SingleProduct/Cart/CartSummary";
+import { CartSummaryInfo } from "./SingleProduct/Cart/CartSummaryInfo";
 
 export {
   CovidBanner,
@@ -28,4 +30,6 @@ export {
   PriceDisplay,
   MainProductDisplay,
   ProductDescription,
+  CartSummary,
+  CartSummaryInfo,
 };
