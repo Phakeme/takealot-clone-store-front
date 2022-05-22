@@ -1,6 +1,13 @@
 import React from "react";
 
 export const PriceDisplay = ({ singleProduct }) => {
+  const handleOnCredit = () => {
+    const price = singleProduct?.price?.raw * 1;
+    if (price >= 1000) {
+      return <p>{`On Credit: R ${Math.floor((price + 800) / 12)} / month`}</p>;
+    }
+    return null;
+  };
   return (
     <div className="bg-white h-[260px] border border-gray-200 px-6 pt-4 rounded">
       <div className="">
@@ -12,7 +19,7 @@ export const PriceDisplay = ({ singleProduct }) => {
         </div>
         <div className="text-xs mb-2">
           <p>eB209,990 Discovery Miles 209,990</p>
-          <p>On Credit: R1,288 / month</p>
+          {handleOnCredit()}
         </div>
         <div className="">
           <div className="bg-green-700 h-[39px] text-white mb-3 flex justify-center items-center">
