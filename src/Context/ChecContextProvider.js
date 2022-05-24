@@ -10,10 +10,46 @@ export const ChecContextProvider = ({ children }) => {
   const [isSingleProductLoading, setIsSingleProductLoading] = useState(false);
   const [isCartLoading, setIsCartLoading] = useState(false);
   const [cart, setCart] = useState({});
+  // const [wishList, setWishList] = useState([]);
 
   useEffect(() => {
     commerce.cart.retrieve().then((cart) => setCart(cart));
+    // setWishList(JSON.parse(localStorage.getItem("wishList")));
   }, []);
+
+  const removeFromCart = (productId) => {
+    setIsCartLoading(true);
+    commerce.cart.remove(productId).then(({ cart }) => {
+      setCart(cart);
+      console.log(cart, "Removed from Cart");
+    });
+  };
+
+  const updateCart = (productId, value) => {
+    commerce.cart.update(productId, { quantity: value }).then(({ cart }) => {
+      setCart(cart);
+      console.log(cart, "Removed from Cart");
+    });
+  };
+
+  const moveWishList = (product) => {
+    let currentList = JSON.parse(localStorage.getItem("wishList"));
+
+    if (currentList === null) {
+      localStorage.setItem("wishList", JSON.stringify([product]));
+      return;
+    }
+
+    for (let i = 0; i < currentList.length; i++) {
+      if (currentList[i].id === product.id) {
+        alert(`${product.name} is already in the wish list`);
+        return;
+      }
+    }
+    currentList.push(product);
+    localStorage.setItem("wishList", JSON.stringify(currentList));
+    removeFromCart(product.id);
+  };
 
   // Save Catergories in an Array State
   const createCatergories = (products) => {
@@ -108,6 +144,9 @@ export const ChecContextProvider = ({ children }) => {
         addToCart,
         isCartLoading,
         cart,
+        removeFromCart,
+        updateCart,
+        moveWishList,
       }}
     >
       {children}
