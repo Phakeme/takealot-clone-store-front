@@ -3,8 +3,15 @@ import { StocksLocations } from "../../Utils/StocksLocations";
 import HeartIcon from "../../../images/Cart/gray-heart.svg";
 import BinIcon from "../../../images/Cart/trash.svg";
 import { CartAction } from "./CartAction";
+import { useChecResultContext } from "../../../Context/ChecContextProvider";
 
 export const CartProduct = ({ product }) => {
+  const { removeFromCart, moveWishList, updateCart } = useChecResultContext();
+
+  const handleChange = (e) => {
+    updateCart(product.id, e.target.value);
+  };
+
   return (
     <div className="h-fit lg:h-[191px] bg-white p-6 border border-gray-200  rounded mb-3 md:mb-6">
       <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] lg:grid-cols-[140px_1fr] gap-6 h-full">
@@ -41,13 +48,23 @@ export const CartProduct = ({ product }) => {
                 <div className="mr-3 text-sm">Qty:</div>
                 <div>
                   <select
-                    id="pet-select"
+                    value={15}
+                    onChange={(e) => handleChange(e)}
+                    id="quantity-select"
                     className="w-full h-full px-2 outline-hidden focus:outline-none cursor-pointer border-b-2"
                   >
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
+                    <option value={product.quantity}>{product.quantity}</option>
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
+                      if (product.quantity === item) {
+                        return null;
+                      } else {
+                        return (
+                          <option key={index} value={item}>
+                            {item}
+                          </option>
+                        );
+                      }
+                    })}
                   </select>
                 </div>
               </div>
@@ -59,8 +76,12 @@ export const CartProduct = ({ product }) => {
                 Eligible for Cash on Delivery
               </div>
               <div className="flex text-sm items-center">
-                <CartAction textLabel="Remove" icon={BinIcon} />
-                <CartAction textLabel="Move to list" icon={HeartIcon} />
+                <div onClick={() => removeFromCart(product?.id)}>
+                  <CartAction textLabel="Remove" icon={BinIcon} />
+                </div>
+                <div onClick={() => moveWishList(product)}>
+                  <CartAction textLabel="Move to list" icon={HeartIcon} />
+                </div>
               </div>
             </div>
           </div>
