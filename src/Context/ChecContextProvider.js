@@ -9,20 +9,23 @@ export const ChecContextProvider = ({ children }) => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [isSingleProductLoading, setIsSingleProductLoading] = useState(false);
   const [isCartLoading, setIsCartLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [cart, setCart] = useState({});
-  // const [wishList, setWishList] = useState([]);
+  const [movingItem, setMovingItem] = useState(null);
 
   useEffect(() => {
     commerce.cart.retrieve().then((cart) => setCart(cart));
-    // setWishList(JSON.parse(localStorage.getItem("wishList")));
   }, []);
 
   const removeFromCart = (productId) => {
     setIsCartLoading(true);
+    setMovingItem(productId);
     commerce.cart.remove(productId).then(({ cart }) => {
       setCart(cart);
       console.log(cart, "Removed from Cart");
+      setIsCartLoading(false);
     });
+    setMovingItem(null);
   };
 
   const updateCart = (productId, value) => {
@@ -33,15 +36,18 @@ export const ChecContextProvider = ({ children }) => {
   };
 
   const moveWishList = (product) => {
+    setIsLoading(true);
     let currentList = JSON.parse(localStorage.getItem("wishList"));
 
     if (currentList === null) {
       localStorage.setItem("wishList", JSON.stringify([product]));
+      setIsLoading(false);
       return;
     }
 
     for (let i = 0; i < currentList.length; i++) {
       if (currentList[i].id === product.id) {
+        setIsLoading(false);
         alert(`${product.name} is already in the wish list`);
         return;
       }
@@ -49,6 +55,7 @@ export const ChecContextProvider = ({ children }) => {
     currentList.push(product);
     localStorage.setItem("wishList", JSON.stringify(currentList));
     removeFromCart(product.id);
+    setIsLoading(false);
   };
 
   // Save Catergories in an Array State
@@ -147,6 +154,8 @@ export const ChecContextProvider = ({ children }) => {
         removeFromCart,
         updateCart,
         moveWishList,
+        isLoading,
+        movingItem,
       }}
     >
       {children}
