@@ -4,6 +4,7 @@ import {
   SingleProductContainer,
   LoginContainer,
   CartContainer,
+  WishListContainer,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainHeader, CovidBanner, Footer, ScrollToTop } from "./components";
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/help" element={<HelpContainer />}></Route>
           <Route exact path="/login" element={<LoginContainer />}></Route>
           <Route exact path="/cart" element={<CartContainer />}></Route>
+          <Route exact path="/wishlist" element={<WishListContainer />}></Route>
           <Route
             exact
             path="/product/:productId"
