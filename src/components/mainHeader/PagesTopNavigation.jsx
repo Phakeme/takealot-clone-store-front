@@ -35,12 +35,13 @@ export const PagesTopNavigation = () => {
         <div className="hidden lg:block">
           <PagesTopNavSingleLink path="/orders" label="Orders" />
         </div>
-
         <div className="text-sm flex items-center justify-center  pl-2 h-8s">
           <MyAccounts />
-          <div className="min-w-8 flex items-center justify-center mx-2 rounded-full bg-red-400 p-2 radius-2 cursor-pointer">
-            <img width="17px" src={Heart} alt="" />
-          </div>
+          <Link to="/wishlist">
+            <div className="min-w-8 flex items-center justify-center mx-2 rounded-full bg-red-400 p-2 radius-2 cursor-pointer">
+              <img width="17px" src={Heart} alt="" />
+            </div>
+          </Link>
 
           <Link to="/cart">
             <div className="h-full flex items-center justify-center bg-green-700 rounded-full p-2 text-white cursor-pointer">
