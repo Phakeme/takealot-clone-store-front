@@ -14,17 +14,31 @@ export const ChecContextProvider = ({ children }) => {
   const [movingItem, setMovingItem] = useState(null);
 
   useEffect(() => {
-    commerce.cart.retrieve().then((cart) => setCart(cart));
+    setIsCartLoading(true);
+    commerce.cart
+      .retrieve()
+      .then((cart) => {
+        setCart(cart);
+        setIsCartLoading(false);
+      })
+      .catch((error) => {
+        setIsCartLoading(false);
+      });
   }, []);
 
   const removeFromCart = (productId) => {
     setIsCartLoading(true);
     setMovingItem(productId);
-    commerce.cart.remove(productId).then(({ cart }) => {
-      setCart(cart);
-      console.log(cart, "Removed from Cart");
-      setIsCartLoading(false);
-    });
+    commerce.cart
+      .remove(productId)
+      .then(({ cart }) => {
+        setCart(cart);
+        console.log(cart, "Removed from Cart");
+        setIsCartLoading(false);
+      })
+      .catch((error) => {
+        setIsCartLoading(false);
+      });
     setMovingItem(null);
   };
 
@@ -54,7 +68,6 @@ export const ChecContextProvider = ({ children }) => {
     }
     currentList.push(product);
     localStorage.setItem("wishList", JSON.stringify(currentList));
-    removeFromCart(product.id);
     setIsLoading(false);
   };
 
