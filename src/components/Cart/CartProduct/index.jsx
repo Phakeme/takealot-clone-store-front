@@ -7,7 +7,7 @@ import { CartAction } from "./CartAction";
 import { useChecResultContext } from "../../../Context/ChecContextProvider";
 
 export const CartProduct = ({ product }) => {
-  const { removeFromCart, moveWishList, updateCart, isLoading } =
+  const { removeFromCart, moveWishList, updateCart, isCartLoading } =
     useChecResultContext();
 
   const handleChange = (e) => {
@@ -21,7 +21,7 @@ export const CartProduct = ({ product }) => {
 
   return (
     <div className="h-fit lg:h-[191px] bg-white p-6 border border-gray-200  rounded mb-3 md:mb-6">
-      {isLoading ? (
+      {isCartLoading ? (
         <div className="h-full w-full flex justify-center items-center">
           <LoadingSpinner />
         </div>
