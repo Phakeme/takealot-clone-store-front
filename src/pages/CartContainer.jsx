@@ -7,6 +7,7 @@ import {
   CartSummaryInfo,
   CartProduct,
   LoaderSpinner,
+  PageTitle,
 } from "../components";
 
 export const CartContainer = () => {
@@ -23,7 +24,7 @@ export const CartContainer = () => {
     return (
       <section className="bg-gray-100 pb-[30px] lg:pb-[60px]">
         <div className="container mx-auto pt-3">
-          <h1 className="font-bold text-[20px] pb-5">Shopping Cart</h1>
+          <PageTitle titeLabel="Shopping Cart" />
           <div className="bg-white rounded h-[331px] flex items-center justify-center">
             <div className="flex justify-center flex-col items-center">
               <div className="rounded-full bg-red-100 overflow-hidden border-8 border-white drop-shadow-lg w-[110px] mb-6">
