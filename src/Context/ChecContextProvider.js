@@ -27,17 +27,17 @@ export const ChecContextProvider = ({ children }) => {
   }, []);
 
   const removeFromCart = (productId) => {
-    setIsCartLoading(true);
+    isLoading(true);
     setMovingItem(productId);
     commerce.cart
       .remove(productId)
       .then(({ cart }) => {
         setCart(cart);
         console.log(cart, "Removed from Cart");
-        setIsCartLoading(false);
+        isLoading(false);
       })
       .catch((error) => {
-        setIsCartLoading(false);
+        isLoading(false);
       });
     setMovingItem(null);
   };
@@ -140,14 +140,18 @@ export const ChecContextProvider = ({ children }) => {
 
   const addToCart = (productId) => {
     setIsCartLoading(true);
+    setIsLoading(true);
+
     commerce.cart
       .add(productId, 1)
       .then(({ cart }) => {
         setIsCartLoading(false);
+        setIsLoading(false);
         setCart(cart, console.log(cart, "AddToCart Cart"));
       })
       .catch(({ data }) => {
         setIsCartLoading(false);
+        setIsLoading(false);
       });
   };
 
