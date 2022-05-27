@@ -15,8 +15,13 @@ import { ProductDescription } from "./SingleProduct/ProductDescription";
 import { CartSummary } from "./Cart/CartSummary";
 import { CartSummaryInfo } from "./Cart/CartSummaryInfo";
 import { CartProduct } from "./Cart/CartProduct/";
+import { CreateWishList } from "./Wshlist/CreateWishList";
+import { PageTitle } from "./Utils/Typography/PageTitle";
+import { Wishlist } from "./Wshlist/Wishlist";
+import { Button } from "./Utils/Button";
 export {
   CovidBanner,
+  Wishlist,
   MainHeader,
   CheckOrderBanner,
   SideAdverts,
@@ -33,4 +38,7 @@ export {
   CartSummary,
   CartSummaryInfo,
   CartProduct,
+  CreateWishList,
+  PageTitle,
+  Button,
 };
