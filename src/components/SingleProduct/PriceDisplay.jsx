@@ -1,9 +1,11 @@
 import React from "react";
 import CartIcon from "../../images/shopping-cart.svg";
+import HeartIcon from "../../images/Wishlist/heart-outline.svg";
 import { useChecResultContext } from "../../Context/ChecContextProvider";
+import { Button } from "../../components/Utils/Button";
 
 export const PriceDisplay = ({ singleProduct }) => {
-  const { addToCart, isCartLoading } = useChecResultContext();
+  const { addToCart, isLoading } = useChecResultContext();
 
   const handleOnCredit = () => {
     const price = singleProduct?.price?.raw * 1;
@@ -31,27 +33,26 @@ export const PriceDisplay = ({ singleProduct }) => {
           </div>
         </div>
 
-        <div className="">
-          <div
-            className="bg-green-700 hover:bg-green-800 h-[39px] text-white mb-3 flex justify-center items-center hover:cursor-pointer"
-            onClick={() => addToCart(addToCart(singleProduct?.id))}
-          >
-            {isCartLoading ? (
-              <span>Loading...</span>
-            ) : (
-              <>
-                <img
-                  className="mr-3"
-                  width="18px"
-                  src={CartIcon}
-                  alt="black-shoping-cart"
-                />
-                <span>+ Add to Cart</span>
-              </>
-            )}
+        <div className="grid grid-cols-1 gap-3">
+          <div onClick={() => addToCart(singleProduct?.id)}>
+            <Button
+              LoadingState={isLoading}
+              icon={CartIcon}
+              bg="bg-green-700"
+              bgHover="bg-green-800"
+              textLabel="+ Add to Cart"
+            />
           </div>
-          <div className="bg-gray-100 hover:bg-gray-200 h-[39px] flex justify-center items-center hover:cursor-pointer">
-            Add to List
+
+          <div onClick={() => console.log(singleProduct?.id)}>
+            <Button
+              LoadingState={isLoading}
+              icon={HeartIcon}
+              bg="bg-gray-100"
+              bgHover="bg-gray-200"
+              textLabel="+ Add to List"
+              textColor="text-gray-600"
+            />
           </div>
         </div>
       </div>
