@@ -1,9 +1,16 @@
 import React from "react";
 
-export const Button = ({ LoadingState, icon, textLabel, bg, bgHover }) => {
+export const Button = ({
+  LoadingState,
+  icon,
+  textLabel,
+  bg,
+  bgHover,
+  textColor = "text-white",
+}) => {
   return (
     <div
-      className={`${bg} hover:${bgHover} h-[39px] text-white mb-3 flex justify-center items-center hover:cursor-pointer text-sm`}
+      className={`${bg} hover:${bgHover} h-[39px] ${textColor} flex justify-center items-center hover:cursor-pointer text-sm rounded`}
     >
       {LoadingState ? (
         <span>Loading...</span>
