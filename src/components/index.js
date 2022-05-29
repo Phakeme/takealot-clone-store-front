@@ -20,7 +20,9 @@ import { PageTitle } from "./Utils/Typography/PageTitle";
 import { Wishlist } from "./Wshlist/Wishlist";
 import { Button } from "./Utils/Button";
 import { EmptyItems } from "./Utils/EmptyItems";
+import { AccountType } from "./Account/index";
 export {
+  AccountType,
   EmptyItems,
   CovidBanner,
   Wishlist,
