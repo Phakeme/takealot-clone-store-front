@@ -52,7 +52,6 @@ export const ChecContextProvider = ({ children }) => {
 
   const deleteFromWishlist = (productId) => {
     setIsWishlistLoading(true);
-    console.log(isWishlistLoading, "isWishlistLoading");
     let currentList = JSON.parse(localStorage.getItem("wishList"));
     let newList = currentList.filter(
       ({ product_id }) => product_id !== productId
