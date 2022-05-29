@@ -19,7 +19,9 @@ import { CreateWishList } from "./Wshlist/CreateWishList";
 import { PageTitle } from "./Utils/Typography/PageTitle";
 import { Wishlist } from "./Wshlist/Wishlist";
 import { Button } from "./Utils/Button";
+import { EmptyItems } from "./Utils/EmptyItems";
 export {
+  EmptyItems,
   CovidBanner,
   Wishlist,
   MainHeader,
