@@ -25,15 +25,15 @@ export const PagesTopNavigation = () => {
           />
         </Link>
         <div className="hidden lg:flex items-center divide-x">
-          <PagesTopNavSingleLink path="/help" label="Help" />
-          <PagesTopNavSingleLink path="/sell" label="Sell on Takealot" />
+          <PagesTopNavSingleLink path="/login" label="Help" />
+          <PagesTopNavSingleLink path="/login" label="Sell on Takealot" />
         </div>
       </div>
       <div className="flex items-center divide-x">
         <PagesTopNavSingleLink path="/login" label="Login" />
-        <PagesTopNavSingleLink path="/register" label="Register" />
+        <PagesTopNavSingleLink path="/login" label="Register" />
         <div className="hidden lg:block">
-          <PagesTopNavSingleLink path="/orders" label="Orders" />
+          <PagesTopNavSingleLink path="/login" label="Orders" />
         </div>
         <div className="text-sm flex items-center justify-center  pl-2 h-8s">
           <MyAccounts />
