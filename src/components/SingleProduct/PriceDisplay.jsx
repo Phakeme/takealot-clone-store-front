@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartIcon from "../../images/shopping-cart.svg";
-import HeartIcon from "../../images/Wishlist/heart-outline.svg";
+import ArrowIcon from "../../images/Cart/arrow-right.svg";
 import { useChecResultContext } from "../../Context/ChecContextProvider";
 import { Button } from "../../components/Utils/Button";
 
@@ -44,16 +45,14 @@ export const PriceDisplay = ({ singleProduct }) => {
             />
           </div>
 
-          <div onClick={() => console.log(singleProduct?.id)}>
+          <Link to="/cart">
             <Button
-              LoadingState={isLoading}
-              icon={HeartIcon}
-              bg="bg-gray-100"
-              bgHover="bg-gray-200"
-              textLabel="+ Add to List"
-              textColor="text-gray-600"
+              icon={ArrowIcon}
+              bg="bg-gray-700"
+              bgHover="bg-gray-800"
+              textLabel="Go to cart"
             />
-          </div>
+          </Link>
         </div>
       </div>
     </div>
