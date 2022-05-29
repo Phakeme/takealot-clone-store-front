@@ -1,8 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Padlock from "../../images/Wishlist/padlock.svg";
+import { LoadingSpinner } from "../Utils/LoadingSpinner/index";
+import { useChecResultContext } from "../../Context/ChecContextProvider";
 
 export const Wishlist = ({ children }) => {
+  const { isCartLoading } = useChecResultContext();
+
+  if (isCartLoading) {
+    return (
+      <div className="flex justify-center items-center h-[200px] lg:h-[350px]">
+        <LoadingSpinner />
+      </div>
+    );
+  }
   return (
     <div>
       <div className="flex overflow-hidden bg-amber-100 border rounded py-3 px-6">
