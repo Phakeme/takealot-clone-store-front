@@ -8,15 +8,15 @@ import ArrowUp from "../../images/arrow-up.svg";
 export const MyAccounts = () => {
   const [isOpen, setIsOpen] = useState(false);
   const data = [
-    { label: "My Account", path: "#" },
-    { label: "Track Order", path: "#" },
-    { label: "Returns", path: "#" },
-    { label: "Credit & Refunds", path: "#" },
-    { label: "Products Reviews", path: "#" },
-    { label: "Invoices", path: "#" },
-    { label: "Personal Detailes", path: "#" },
-    { label: "Digital Libary", path: "#" },
-    { label: "Help", path: "/help" },
+    { label: "My Account", path: "/account" },
+    { label: "Track Order", path: "/login" },
+    { label: "Returns", path: "/login" },
+    { label: "Credit & Refunds", path: "/login" },
+    { label: "Products Reviews", path: "/login" },
+    { label: "Invoices", path: "/login" },
+    { label: "Personal Detailes", path: "/login" },
+    { label: "Digital Libary", path: "/login" },
+    { label: "Help", path: "/login" },
   ];
   const DropDownMenu = () => {
     return (
