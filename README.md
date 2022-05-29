@@ -14,6 +14,8 @@ https://github.com/airbnb/javascript/tree/master/react
 
 ### API's
 
+- Chec API
+
 ### Global Event Handlers
 
 - Conponents = MainHeader
