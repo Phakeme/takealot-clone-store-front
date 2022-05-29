@@ -4,6 +4,7 @@ import { SingleProductContainer } from "./SingleProductContainer";
 import { LoginContainer } from "./LoginContainer";
 import { CartContainer } from "./CartContainer";
 import { WishListContainer } from "./WishListContainer";
+import { MyAccountContainer } from "./MyAccountContainer";
 
 export {
   HomeContainer,
@@ -12,4 +13,5 @@ export {
   LoginContainer,
   CartContainer,
   WishListContainer,
+  MyAccountContainer,
 };
