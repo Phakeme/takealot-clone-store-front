@@ -22,7 +22,7 @@ export const WishListContainer = () => {
 
   const wishlistProducts = JSON.parse(localStorage.getItem("wishList"));
 
-  if (wishlistProducts?.length === 0) {
+  if (wishlistProducts?.length === 0 || wishlistProducts === null) {
     return (
       <EmptyItems
         pagetitle="Wish List"
