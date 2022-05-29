@@ -9,14 +9,14 @@ import AdvertPhones from "../../images/ad-4.png";
 const database = {
   navigations: {
     navLinks: [
-      { label: "Help", path: "/Help" },
-      { label: "Sell on Takealot", path: "/sell" },
+      { label: "Help", path: "/login" },
+      { label: "Sell on Takealot", path: "/login" },
       { label: "Login", path: "/login" },
-      { label: "Register", path: "/register" },
-      { label: "Orders", path: "/orders" },
-      { label: "My Accounts", path: "/my-accounts" },
+      { label: "Register", path: "/login" },
+      { label: "Orders", path: "/login" },
+      { label: "My Accounts", path: "/account" },
       { label: "Cart", path: "/cart", icon: CartGreen },
-      { label: "Lists", path: "/lists", icon: Heart },
+      { label: "Lists", path: "/wishlist", icon: Heart },
     ],
   },
   heroNavigations: {
