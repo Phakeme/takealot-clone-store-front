@@ -9,6 +9,7 @@ export const ChecContextProvider = ({ children }) => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [isSingleProductLoading, setIsSingleProductLoading] = useState(false);
   const [isCartLoading, setIsCartLoading] = useState(false);
+  const [isWishlistLoading, setIsWishlistLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [cart, setCart] = useState({});
   const [movingItem, setMovingItem] = useState(null);
@@ -27,17 +28,17 @@ export const ChecContextProvider = ({ children }) => {
   }, []);
 
   const removeFromCart = (productId) => {
-    isLoading(true);
+    setIsCartLoading(true);
     setMovingItem(productId);
     commerce.cart
       .remove(productId)
       .then(({ cart }) => {
         setCart(cart);
         console.log(cart, "Removed from Cart");
-        isLoading(false);
+        setIsCartLoading(false);
       })
       .catch((error) => {
-        isLoading(false);
+        setIsCartLoading(false);
       });
     setMovingItem(null);
   };
@@ -47,6 +48,18 @@ export const ChecContextProvider = ({ children }) => {
       setCart(cart);
       console.log(cart, "Removed from Cart");
     });
+  };
+
+  const deleteFromWishlist = (productId) => {
+    setIsWishlistLoading(true);
+    console.log(isWishlistLoading, "isWishlistLoading");
+    let currentList = JSON.parse(localStorage.getItem("wishList"));
+    let newList = currentList.filter(
+      ({ product_id }) => product_id !== productId
+    );
+
+    localStorage.setItem("wishList", JSON.stringify(newList));
+    setTimeout(() => setIsWishlistLoading(false), 1000);
   };
 
   const moveWishList = (product) => {
@@ -173,6 +186,8 @@ export const ChecContextProvider = ({ children }) => {
         moveWishList,
         isLoading,
         movingItem,
+        deleteFromWishlist,
+        isWishlistLoading,
       }}
     >
       {children}
