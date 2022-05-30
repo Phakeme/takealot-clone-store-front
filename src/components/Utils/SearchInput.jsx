@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SearchInput = () => {
+export const SearchInput = ({ setTextQuery }) => {
   return (
     <div className="flex h-full">
       <input
@@ -10,6 +10,7 @@ export const SearchInput = () => {
         name="q"
         autoComplete="off"
         placeholder="Search for products, brands..."
+        onChange={(e) => setTextQuery(e.target.value)}
       />
     </div>
   );
