@@ -2,10 +2,12 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { closeSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
+import { useChecResultContext } from "../../../Context/ChecContextProvider";
 
 export const MobiNavLink = ({ path, label, icon = null }) => {
+  const { cart } = useChecResultContext();
   const dispatch = useDispatch();
-  const cart = label === "Cart";
+  const cartLink = label === "Cart";
 
   return (
     <Link to={path}>
@@ -25,7 +27,7 @@ export const MobiNavLink = ({ path, label, icon = null }) => {
               ) : null}
               <div>{label}</div>
             </div>
-            {cart && <div>0 items</div>}
+            {cartLink && <div>{cart?.line_items?.length} items</div>}
           </div>
         )}
       </div>
