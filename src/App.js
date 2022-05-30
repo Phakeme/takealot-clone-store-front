@@ -6,6 +6,7 @@ import {
   CartContainer,
   WishListContainer,
   MyAccountContainer,
+  SearchProductsContainer,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainHeader, CovidBanner, Footer, ScrollToTop } from "./components";
@@ -28,6 +29,11 @@ function App() {
             exact
             path="/product/:productId"
             element={<SingleProductContainer />}
+          ></Route>
+          <Route
+            exact
+            path="/results"
+            element={<SearchProductsContainer />}
           ></Route>
         </Routes>
         <Footer />
