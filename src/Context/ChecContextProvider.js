@@ -150,6 +150,28 @@ export const ChecContextProvider = ({ children }) => {
     }
   };
 
+  // Retrieve a product by query
+  const queryProduct = (query) => {
+    if (query.trim().length < 1) return;
+    console.log(query);
+    commerce.products
+      .list({
+        query: query.trim(),
+      })
+      .then((response) => {
+        console.log(response.data);
+        localStorage.setItem(
+          "productsFromQuery",
+          JSON.stringify(response.data)
+        );
+      })
+      .catch((error) => {
+        console.log("There was an error fetching the products", error);
+        setIsSingleProductLoading(false);
+      });
+    // Returns all products that contains the string in either the product name or permalink
+  };
+
   const addToCart = (productId) => {
     setIsCartLoading(true);
     setIsLoading(true);
@@ -187,6 +209,7 @@ export const ChecContextProvider = ({ children }) => {
         movingItem,
         deleteFromWishlist,
         isWishlistLoading,
+        queryProduct,
       }}
     >
       {children}
