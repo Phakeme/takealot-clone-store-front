@@ -153,21 +153,28 @@ export const ChecContextProvider = ({ children }) => {
   // Retrieve a product by query
   const queryProduct = (query) => {
     if (query.trim().length < 1) return;
-    console.log(query);
+    query = query.split(" ")[0].toLowerCase();
+    setIsLoading(true);
     commerce.products
       .list({
         query: query.trim(),
       })
       .then((response) => {
         console.log(response.data);
-        localStorage.setItem(
-          "productsFromQuery",
-          JSON.stringify(response.data)
-        );
+        if (response.data) {
+          localStorage.setItem(
+            "productsFromQuery",
+            JSON.stringify(response.data)
+          );
+        } else {
+          localStorage.setItem("productsFromQuery", null);
+        }
+        localStorage.setItem("searchTerm", JSON.stringify(query));
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log("There was an error fetching the products", error);
-        setIsSingleProductLoading(false);
+        setIsLoading(false);
       });
     // Returns all products that contains the string in either the product name or permalink
   };
