@@ -38,10 +38,8 @@ export const SideBarCategoryNavigations = ({ heroNavigations }) => {
         </div>
         {isOpen && (
           <ul className="my-2">
-            {heroNavigations?.heroNavLinks?.map(({ label, path }) => (
-              <div key={path}>
-                <SideBarCategorySingleLink label={label} path={path} />
-              </div>
+            {heroNavigations?.heroNavLinks?.map(({ label }) => (
+              <SideBarCategorySingleLink label={label} key={label} />
             ))}
           </ul>
         )}
