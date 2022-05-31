@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144">
+
+  <style>
+    @keyframes cloudOneSlide {
+      from,
+      to { animation-timing-function: linear; }
+
+      from { transform: translate(130px, 0px); }
+      to { transform: translate(-50px, 0px); }
+    }
+
+    @keyframes cloudTwoSlide {
+      from,
+      to { animation-timing-function: linear; }
+
+      from { transform: translate(100px, 0px); }
+      to { transform: translate(-135px, 0px); }
+    }
+
+    .cloud_one {
+      animation-delay: -4500ms;
+      animation-name: cloudOneSlide;
+      animation-duration: 9200ms;
+      transform-origin: 50% 50%;
+      transform: translate(100px, 0);
+      animation-iteration-count: infinite;
+    }
+
+    .cloud_two {
+      animation-delay: -5500ms;
+      animation-name: cloudTwoSlide;
+      animation-duration: 8630ms;
+      transform-origin: 50% 50%;
+      transform: translate(-45px, 0);
+      animation-iteration-count: infinite;
+    }
+  </style>
+
+  <g data-name="Group 1">
+    <path data-name="Path 1" d="M72 132a60 60 0 10-60-60 60 60 0 0060 60z"/>
+  </g>
+  <path data-name="Path 2" d="M72 135A63 63 0 109 72a63 63 0 0063 63z" fill="#7fc7f5" stroke="#fff" stroke-width="6"/>
+  <path data-name="Path 3" d="M144 0H0v144h144z" fill="#7fc7f5"/>
+  <path data-name="Path 4" d="M0 97.2h144V144H0z" fill="#91d0aa" fill-rule="evenodd"/>
+  <g data-name="Group 2">
+    <path data-name="Path 5" d="M125.3 93.338a6.455 6.455 0 00-.942.069 4.529 4.529 0 00-3.65-7.955 5.359 5.359 0 00-4.619-7.631 3.285 3.285 0 00-2.508-4.206c0-.053.008-.106.008-.159a3.918 3.918 0 00-3.918-3.918h-.017q.03-.306.03-.62a6.535 6.535 0 00-9.144-5.991 9.078 9.078 0 00-12.57-1.684 14.594 14.594 0 00-26.424-3.194 14.063 14.063 0 00-22.913 10.077c-.1-.007-.2-.015-.294-.015a4 4 0 00-3.91 4.822 4.491 4.491 0 00-4.145 5.6 4.417 4.417 0 00-1.893 6.767 4.554 4.554 0 00-3.8 4.488c0 .045.006.089.007.133a1.976 1.976 0 00-2.335 1.951c0 .066 0 .132.01.2a8.668 8.668 0 00-6.2 9.493h115.418a6.44 6.44 0 00-6.187-8.22z" fill="#62aa53" fill-rule="evenodd"/>
+  </g>
+
+  <!-- CLOUD ONE -->
+  <path
+    data-name="Path 6"
+    d="M52.8 42h-48a7.2 7.2 0 0110.969-6.136A14.4 14.4 0 0140 32.947 9.607 9.607 0 0152.8 42z"
+    fill="#fff"
+    fill-rule="evenodd"
+    class="cloud_one"
+  />
+
+  <!-- CLOUD TWO -->
+  <path
+    data-name="Path 7"
+    d="M136 47.8h-36a6 6 0 018.639-5.39 10.8 10.8 0 0118.722 0A6 6 0 01136 47.8z"
+    fill="#fff"
+    fill-rule="evenodd"
+    class="cloud_two"
+  />
+
+  <path data-name="Path 8" d="M100 112c6.075 0 11-.895 11-2s-4.925-2-11-2-11 .895-11 2 4.925 2 11 2z" fill="#82ba98"/>
+  <path data-name="Path 9" d="M73 109c24.853 0 45-.895 45-2s-20.147-2-45-2-45 .895-45 2 20.147 2 45 2z" fill="#82ba98"/>
+  <path data-name="Path 10" d="M30 106h84V47a2 2 0 00-2-2H32a2 2 0 00-2 2z" fill="#fffdff" fill-rule="evenodd"/>
+  <path data-name="Path 11" d="M32 45h80a2 2 0 012 2v4H30v-4a2 2 0 012-2z" fill="#f4f4f4" fill-rule="evenodd"/>
+  <path data-name="Path 12" d="M33 49a1 1 0 10-1-1 1 1 0 001 1z" fill="#f15650"/>
+  <path data-name="Path 13" d="M37 49a1 1 0 10-1-1 1 1 0 001 1z" fill="#f6bd2f"/>
+  <path data-name="Path 14" d="M41 49a1 1 0 10-1-1 1 1 0 001 1z" fill="#4acc40"/>
+  <path data-name="Path 15" d="M102 56H39a2 2 0 00-2 2v1a2 2 0 002 2h63a2 2 0 002-2v-1a2 2 0 00-2-2z" fill="#e4e4e4"/>
+  <path data-name="Path 16" d="M102 56h-8a2 2 0 00-2 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 00-2-2z" fill="#b4b4b4"/>
+  <path data-name="Path 17" d="M46 66h-7a2 2 0 00-2 2v10a2 2 0 002 2h7a2 2 0 002-2V68a2 2 0 00-2-2z" fill="#ccc"/>
+  <path data-name="Path 18" d="M66.5 68h-15a1.5 1.5 0 000 3h15a1.5 1.5 0 000-3z" fill="#afafaf"/>
+  <path data-name="Path 19" d="M100 73H51a1 1 0 000 2h49a1 1 0 000-2z" fill="#d8d8d8"/>
+  <path data-name="Path 20" d="M100 77H51a1 1 0 000 2h49a1 1 0 000-2z" fill="#d8d8d8"/>
+  <path data-name="Path 21" d="M46 86h-7a2 2 0 00-2 2v10a2 2 0 002 2h7a2 2 0 002-2V88a2 2 0 00-2-2z" fill="#ccc"/>
+  <path data-name="Path 22" d="M69.5 88h-18a1.5 1.5 0 000 3h18a1.5 1.5 0 000-3z" fill="#afafaf"/>
+  <path data-name="Path 23" d="M100 93H51a1 1 0 000 2h49a1 1 0 000-2z" fill="#d8d8d8"/>
+  <path data-name="Path 24" d="M100 97H51a1 1 0 000 2h49a1 1 0 000-2z" fill="#d8d8d8"/>
+  <path data-name="Path 30" d="M99.126 109.991L86.7 94.809l5.3-4.29 12.428 15.181a3.41 3.41 0 01-5.3 4.29z" fill="#5d84af" fill-rule="evenodd"/>
+  <path data-name="Path 31" d="M94.879 94.025l-5.3 4.29-2.879-3.506 5.3-4.29z" fill="#285382" fill-rule="evenodd"/>
+  <path data-name="Path 32" d="M92.866 72.9A15.052 15.052 0 1171.7 70.668 15.052 15.052 0 0192.866 72.9zm-1.835 1.485a12.691 12.691 0 10-1.884 17.848 12.691 12.691 0 001.884-17.846z" fill="#5d84af" fill-rule="evenodd"/>
+  <path data-name="Path 33" d="M81.164 71.771a10.581 10.581 0 011.113.059" fill="none" stroke="#fffdff" stroke-linecap="round" stroke-width="2"/>
+  <path data-name="Path 34" d="M70.625 81.257a10.6 10.6 0 016.8-8.808" fill="none" stroke="#fffdff" stroke-linecap="round" stroke-width="2"/>
+  <path data-name="Path 35" d="M82.214 92.918a10.63 10.63 0 01-2.161-.009" fill="none" stroke="#fffdff" stroke-linecap="round" stroke-width="2"/>
+  <path data-name="Path 36" d="M91.7 83.482a10.6 10.6 0 01-6.878 8.836" fill="none" stroke="#fffdff" stroke-linecap="round" stroke-width="2"/>
+</svg>
