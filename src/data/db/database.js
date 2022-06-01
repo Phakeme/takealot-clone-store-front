@@ -9,8 +9,8 @@ import AdvertPhones from "../../images/ad-4.png";
 const database = {
   navigations: {
     navLinks: [
-      { label: "Help", path: "/login" },
-      { label: "Sell on Takealot", path: "/login" },
+      { label: "Help", path: "/help" },
+      { label: "Sell on Takealot", path: "/sell" },
       { label: "Login", path: "/login" },
       { label: "Register", path: "/login" },
       { label: "Orders", path: "/login" },
