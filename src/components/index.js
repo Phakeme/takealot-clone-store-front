@@ -21,6 +21,7 @@ import { Wishlist } from "./Wshlist/Wishlist";
 import { Button } from "./Utils/Button";
 import { EmptyItems } from "./Utils/EmptyItems";
 import { AccountType } from "./Account/index";
+import { QNA } from "./Help/QNA";
 export {
   AccountType,
   EmptyItems,
@@ -45,4 +46,5 @@ export {
   CreateWishList,
   PageTitle,
   Button,
+  QNA,
 };
