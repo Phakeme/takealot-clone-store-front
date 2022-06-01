@@ -160,8 +160,8 @@ export const ChecContextProvider = ({ children }) => {
         query: query.trim(),
       })
       .then((response) => {
-        console.log(response.data);
         if (response.data) {
+          console.log(response.data);
           localStorage.setItem(
             "productsFromQuery",
             JSON.stringify(response.data)
