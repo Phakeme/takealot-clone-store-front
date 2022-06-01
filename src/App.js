@@ -7,6 +7,7 @@ import {
   WishListContainer,
   MyAccountContainer,
   SearchProductsContainer,
+  SellContainer,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainHeader, CovidBanner, Footer, ScrollToTop } from "./components";
@@ -35,6 +36,7 @@ function App() {
             path="/results"
             element={<SearchProductsContainer />}
           ></Route>
+          <Route exact path="/sell" element={<SellContainer />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
