@@ -1,5 +1,14 @@
 import React from "react";
+import { Hero, GetTools } from "../components";
 
 export const SellContainer = () => {
-  return <div>SellContainer</div>;
+  return (
+    <div>
+      <Hero />
+      <GetTools />
+      <div className="" id="pricing">
+        Pricing
+      </div>
+    </div>
+  );
 };
