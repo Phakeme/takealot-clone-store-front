@@ -22,7 +22,11 @@ import { Button } from "./Utils/Button";
 import { EmptyItems } from "./Utils/EmptyItems";
 import { AccountType } from "./Account/index";
 import { QNA } from "./Help/QNA";
+import { Hero } from "./Sell/Hero";
+import { GetTools } from "./Sell/GetTools";
 export {
+  GetTools,
+  Hero,
   AccountType,
   EmptyItems,
   CovidBanner,
