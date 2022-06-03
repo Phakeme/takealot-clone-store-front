@@ -26,9 +26,9 @@ export const Hero = () => {
             </h2>
           </div>
           <div className="">
-            <a href="#pricing">
-              <div className="px-5 p-3 border w-fit cursor-pointer hover:bg-white hover:text-blue">
-                See Pricing
+            <a href="#selling">
+              <div className="px-6 p-3 rounded border w-fit cursor-pointer hover:bg-white hover:text-blue font-bold">
+                Start selling
               </div>
             </a>
           </div>
