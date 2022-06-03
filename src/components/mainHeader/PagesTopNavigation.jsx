@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import BrandLogo from "../../images/takealot-logo.svg";
+import BrandLogo from "../../images/branding/codealot-logo.svg";
 import CartIcon from "../../images/shopping-cart.svg";
 import Heart from "../../images/heart.svg";
 import { PagesTopNavSingleLink } from "./PagesTopNavSingleLink";
