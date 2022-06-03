@@ -23,9 +23,9 @@ import { EmptyItems } from "./Utils/EmptyItems";
 import { AccountType } from "./Account/index";
 import { QNA } from "./Help/QNA";
 import { Hero } from "./Sell/Hero";
-import { GetTools } from "./Sell/GetTools";
+import { SellSection } from "./Sell/SellSection";
 export {
-  GetTools,
+  SellSection,
   Hero,
   AccountType,
   EmptyItems,
