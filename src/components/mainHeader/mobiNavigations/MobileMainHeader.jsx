@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import brandLogo from "../../../images/takealot-logo.svg";
+import brandLogo from "../../../images/branding/codealot-logo.svg";
 import Search from "../../../images/search.svg";
 import BlackShoppingCart from "../../../images/black-shopping-cart.svg";
 import Menu from "../../../images/open-menu.svg";
