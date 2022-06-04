@@ -10,7 +10,7 @@ const database = {
   navigations: {
     navLinks: [
       { label: "Help", path: "/help" },
-      { label: "Sell on Takealot", path: "/sell" },
+      { label: "Sell on Codealot", path: "/sell" },
       { label: "Login", path: "/login" },
       { label: "Register", path: "/login" },
       { label: "Orders", path: "/login" },
