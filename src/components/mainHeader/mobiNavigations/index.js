@@ -57,7 +57,7 @@ export const MobileSideBar = () => {
               <div className="ml-2">Login</div>
             </div>
           </Link>
-          <Link to="/signup">
+          <Link to="/login">
             <div
               className="ml-3 text-blue p-1"
               onClick={() => dispatch(closeSideBar())}
