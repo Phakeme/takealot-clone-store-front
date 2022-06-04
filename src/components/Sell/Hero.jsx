@@ -14,11 +14,11 @@ export const Hero = () => {
     >
       <div className="container mx-auto flex items-center">
         <div
-          className=" text-white p-6 w-[560px]"
+          className=" text-white p-2 md:p-6 w-full md:w-[560px]"
           style={{ background: "rgba(11, 121, 191, 0.9)" }}
         >
-          <div className="mb-3">
-            <h1 className="text-[48px] font-bold">
+          <div className="m-1 md:mb-3">
+            <h1 className="text-[28px] md:text-[48px] font-bold">
               Join SA's Best Online Portfolio Project
             </h1>
             <h2 className="text-[24px]">
