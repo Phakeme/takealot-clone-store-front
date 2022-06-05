@@ -42,9 +42,9 @@ export const Footer = () => {
         </div>
         <div className="bg-blue">
           <div className="container mx-auto p-6 flex justify-between text-sm text-white items-center flex-col lg:flex-row">
-            <div className="grid grid-flow-col opacity-75 mb-5 lg:mb-0">
-              {footerLogosData.map((logo, index) => (
-                <div key={index} className="mr-4 ">
+            <div className="md:hidden grid gap-3 grid-flow-col opacity-75 mb-5 md:mb-0">
+              {footerLogosData.slice(0, 4).map((logo, index) => (
+                <div key={index} className="">
                   <img
                     style={{ height: "20px" }}
                     src={logo}
@@ -53,7 +53,18 @@ export const Footer = () => {
                 </div>
               ))}
             </div>
-            <div>© Codealot Online (Pty) Ltd</div>
+            <div className="hidden md:grid gap-3 grid-flow-col opacity-75 mb-5 md:mb-0">
+              {footerLogosData.map((logo, index) => (
+                <div key={index} className="">
+                  <img
+                    style={{ height: "20px" }}
+                    src={logo}
+                    alt="footer-brand"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="">© Codealot Online (Pty) Ltd</div>
           </div>
         </div>
       </footer>
