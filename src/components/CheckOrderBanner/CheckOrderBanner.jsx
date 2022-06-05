@@ -4,7 +4,7 @@ import Truck from "../../images/truck.svg";
 
 export const CheckOrderBanner = () => {
   return (
-    <Link to="/test">
+    <Link to="/help">
       <div className="flex w-full h-[73px] shadow bg-sky-50 border-2 border-white overflow-hidden">
         <div className="w-32 relative mr-2 bg-left flex items-center -left-10">
           <div className="bg-sky-300 rounded-full absolute w-36 h-36 flex items-center">

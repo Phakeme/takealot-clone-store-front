@@ -1,7 +1,7 @@
-// import Mastercard from "../../images/footer/mastercard.svg";
-// import Diners from "../../images/footer/diners.svg";
-// import Ebucks from "../../images/footer/ebucks.svg";
-// import Mobi from "../../images/footer/mobi.svg";
+import Mastercard from "../../images/footer/mastercard.svg";
+import Diners from "../../images/footer/diners.svg";
+import Ebucks from "../../images/footer/ebucks.svg";
+import Mobi from "../../images/footer/mobi.svg";
 import Payfast from "../../images/footer/payfast-cropped.svg";
 import Ozow from "../../images/footer/ozow.svg";
 import Express from "../../images/footer/express.svg";
@@ -11,50 +11,59 @@ export const footerModulesData = [
   {
     title: "Shop",
     footerLinks: [
-      { textlabel: "Daily Deals", path: "/" },
-      { textlabel: "App Only Deals", path: "/" },
-      { textlabel: "Clearance Sale", path: "/" },
-      { textlabel: "Gift Vouchers", path: "/" },
+      { textlabel: "Daily Deals", path: "./login" },
+      { textlabel: "App Only Deals", path: "./login" },
+      { textlabel: "Clearance Sale", path: "./login" },
+      { textlabel: "Gift Vouchers", path: "./login" },
     ],
   },
   {
     title: "Help",
     footerLinks: [
-      { textlabel: "Help", path: "/" },
-      { textlabel: "Contact Us", path: "/" },
-      { textlabel: "Submit an Idea", path: "/" },
-      { textlabel: "Suggest a Product", path: "/" },
-      { textlabel: "Shipping & Delivery", path: "/" },
-      { textlabel: "Takealot Pickup Points", path: "/" },
-      { textlabel: "Returns", path: "/" },
+      { textlabel: "Help", path: "/help" },
+      { textlabel: "Contact Us", path: "/login" },
+      { textlabel: "Submit an Idea", path: "/login" },
+      { textlabel: "Suggest a Product", path: "/login" },
+      { textlabel: "Shipping & Delivery", path: "/login" },
+      { textlabel: "Codealot Pickup Points", path: "/login" },
+      { textlabel: "Returns", path: "/login" },
     ],
   },
   {
     title: "Account",
     footerLinks: [
-      { textlabel: "My Account", path: "/" },
-      { textlabel: "Track Order", path: "/" },
-      { textlabel: "Returns", path: "/" },
-      { textlabel: "Personal Details", path: "/" },
-      { textlabel: "Invoices", path: "/" },
-      { textlabel: "Digital Library", path: "/" },
+      { textlabel: "My Account", path: "/account" },
+      { textlabel: "Track Order", path: "/login" },
+      { textlabel: "Returns", path: "/login" },
+      { textlabel: "Personal Details", path: "/login" },
+      { textlabel: "Invoices", path: "/login" },
+      { textlabel: "Digital Library", path: "/login" },
     ],
   },
   {
     title: "Company",
     footerLinks: [
-      { textlabel: "About Us", path: "/" },
-      { textlabel: "Careers", path: "/" },
-      { textlabel: "Sell on Takealot", path: "/sell" },
-      { textlabel: "Deliver for Takealot", path: "/" },
-      { textlabel: "Press & News", path: "/" },
-      { textlabel: "Terms & Conditions", path: "/" },
-      { textlabel: "Competitions", path: "/" },
-      { textlabel: "Privacy Policy", path: "/" },
-      { textlabel: "Human Rights Statement", path: "/" },
-      { textlabel: "Speak Up Process", path: "/" },
+      { textlabel: "About Us", path: "/login" },
+      { textlabel: "Careers", path: "/login" },
+      { textlabel: "Sell on Codealot", path: "/login" },
+      { textlabel: "Deliver for Codealot", path: "/login" },
+      { textlabel: "Press & News", path: "/login" },
+      { textlabel: "Terms & Conditions", path: "/login" },
+      { textlabel: "Competitions", path: "/login" },
+      { textlabel: "Privacy Policy", path: "/login" },
+      { textlabel: "Human Rights Statement", path: "/login" },
+      { textlabel: "Speak Up Process", path: "/login" },
     ],
   },
 ];
 
-export const footerLogosData = [Visa, Ozow, Payfast, Express];
+export const footerLogosData = [
+  Visa,
+  Ozow,
+  Payfast,
+  Express,
+  Mobi,
+  Ebucks,
+  Diners,
+  Mastercard,
+];

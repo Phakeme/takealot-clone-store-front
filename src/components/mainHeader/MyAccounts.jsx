@@ -16,7 +16,7 @@ export const MyAccounts = () => {
     { label: "Invoices", path: "/login" },
     { label: "Personal Detailes", path: "/login" },
     { label: "Digital Libary", path: "/login" },
-    { label: "Help", path: "/login" },
+    { label: "Help", path: "/help" },
   ];
   const DropDownMenu = () => {
     return (

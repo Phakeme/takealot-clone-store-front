@@ -11,7 +11,7 @@ export const FooterModule = ({ footerModule }) => {
             key={index}
             className="text-sm hover:text-blue w-fit hover:underline"
           >
-            <Link to="/deals">{item.textlabel}</Link>
+            <Link to="/login">{item.textlabel}</Link>
           </li>
         ))}
       </ul>

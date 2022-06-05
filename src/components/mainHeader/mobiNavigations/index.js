@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import x from "../../../images/x.svg";
-import brandLogo from "../../../images/takealot-logo.svg";
+import brandLogo from "../../../images/branding/codealot-logo.svg";
 import user from "../../../images/user.svg";
 import { MobiNavLink } from "./MobiNavLink";
 import { closeSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
