@@ -18,7 +18,7 @@ export const SellContainer = () => {
     {
       companyName: "Handcrafted Toys",
       person: "Luvuthando Dolls",
-      body: "“Being on Takealot Marketplace has really had a positive impact on my life and my business. I would absolutely recommend it to any budding entrepreneur.”",
+      body: "“Being on Codealot Marketplace has really had a positive impact on my life and my business. I would absolutely recommend it to any budding entrepreneur.”",
       video: "https://www.youtube.com/watch?v=ckvEFTStwUc",
     },
     {
@@ -30,25 +30,25 @@ export const SellContainer = () => {
     {
       companyName: "African Technopreneurs",
       person: "VR & Augmented Reality",
-      body: "“It's been a smooth transition, being able to talk to our account manager, being able to get our products onto the platform and Takealot has been a reliable partner for us to actually work with.”",
+      body: "“It's been a smooth transition, being able to talk to our account manager, being able to get our products onto the platform and Codealot has been a reliable partner for us to actually work with.”",
       video: "https://www.youtube.com/watch?v=dPdQaC2FfsQ",
     },
     {
       companyName: "King Kong Leather",
       person: "Handcrafted Leather Bags & Accessories",
-      body: "“We've experienced tremendous growth, and have benefited from great online exposure through Takealot Marketplace.”",
+      body: "“We've experienced tremendous growth, and have benefited from great online exposure through Codealot Marketplace.”",
       video: "https://www.youtube.com/watch?v=fopgaKmomVY",
     },
     {
       companyName: "Love Tea Time",
       person: "Luxury Teas & Infusions",
-      body: "“I can now own a shop that's open 24 hours a day, and I've experienced 100% year–on–year growth since joining Takealot Marketplace.”",
+      body: "“I can now own a shop that's open 24 hours a day, and I've experienced 100% year–on–year growth since joining Codealot Marketplace.”",
       video: "https://www.youtube.com/watch?v=NSfZDN5gU1Y",
     },
     {
       companyName: "Miss Lyn",
       person: "Fine Home & Hospitality Bed Linen",
-      body: "“Takealot Marketplace offers end–to–end solutions, and access to over a million customers countrywide, something that isn't achievable with just brick and mortar stores.”",
+      body: "“Codealot Marketplace offers end–to–end solutions, and access to over a million customers countrywide, something that isn't achievable with just brick and mortar stores.”",
       video: "https://www.youtube.com/watch?v=NAUIU-KSnto",
     },
   ];
@@ -65,7 +65,7 @@ export const SellContainer = () => {
     },
     {
       title: "Registration",
-      body: "Complete your Takealot Seller account by supplying all the required information and paperwork.",
+      body: "Complete your Codealot Seller account by supplying all the required information and paperwork.",
       image: Registration,
     },
     {
@@ -92,7 +92,7 @@ export const SellContainer = () => {
     },
     {
       title: "End–to–End Solutions",
-      body: "We'll provide the tools you need to set up and sell – manage your stock, pricing, product selection and more from the Takealot Seller Portal.",
+      body: "We'll provide the tools you need to set up and sell – manage your stock, pricing, product selection and more from the Codealot Seller Portal.",
       bgImage: EndtoEndBg,
     },
     {
@@ -113,7 +113,7 @@ export const SellContainer = () => {
         textColor="text-black"
         bg="bg-gray-100"
         heading="Get the tools you need to increase sales and grow your business online"
-        subHeading="Selling your products online has never been easier. Simply apply to sell as a Takealot seller today and easily reach online shoppers across South Africa."
+        subHeading="Selling your products online has never been easier. Simply apply to sell as a Codealot seller today and easily reach online shoppers across South Africa."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {toolsdata?.map((item, index) => (
