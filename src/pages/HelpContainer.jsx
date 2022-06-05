@@ -9,15 +9,15 @@ export const HelpContainer = () => {
     },
     {
       title: "When will my order be delivered?",
-      body: "We'll deliver your order by the Estimated Delivery Date provided in your Payment Confirmation emailYou can also track your delivery at any time by selecting the Order from your Order History on your Takealot Account profile here. This is the most current tracking information we have for your order. If this date changes, we’ll let you know straight away by email or SMS.",
+      body: "We'll deliver your order by the Estimated Delivery Date provided in your Payment Confirmation emailYou can also track your delivery at any time by selecting the Order from your Order History on your Codealot Account profile here. This is the most current tracking information we have for your order. If this date changes, we’ll let you know straight away by email or SMS.",
     },
     {
       title: "Can I reschedule my delivery?",
       body: "To reschedule your delivery, follow these easy steps: Go to your Orders page. Select the order you would like to reschedule. If your delivery is eligible for rescheduling, a Reschedule Delivery button will be displayed on the Order Detail page. Choose a new delivery date from the available options and select Save Date. A confirmation message will be displayed to confirm that the rescheduling has been successful.",
     },
     {
-      title: "About Takealot Pickup Points",
-      body: "Takealot Pickup Points provide you with an alternative delivery location where you can collect your Takealot order. A number of Pickup Points are available across South Africa. You can find a list of available Takealot Pickup Points here. During checkout, you'll see the option to Collect your order from a Takealot Pickup Point if all items in your shopping cart are eligible for collection. If all items in your shopping cart add up to R450 or more, your order will qualify for the FREE Standard Collect option. Standard Collect for orders below R450 costs R25.",
+      title: "About Codealot Pickup Points",
+      body: "Codealot Pickup Points provide you with an alternative delivery location where you can collect your Codealot order. A number of Pickup Points are available across South Africa. You can find a list of available Codealot Pickup Points here. During checkout, you'll see the option to Collect your order from a Codealot Pickup Point if all items in your shopping cart are eligible for collection. If all items in your shopping cart add up to R450 or more, your order will qualify for the FREE Standard Collect option. Standard Collect for orders below R450 costs R25.",
     },
     {
       title: "Can I extend my collection expiry date?",
@@ -32,16 +32,16 @@ export const HelpContainer = () => {
       body: "Please complete our Help form below and one of our friendly online shopping assistants will be in touch to help.",
     },
     {
-      title: "How do I register an account on takealot.com?",
-      body: "Registering on takealot.com is easy. To get started you’ll need an email address and at least one contact telephone number.",
+      title: "How do I register an account on Codealot.com?",
+      body: "Registering on Codealot.com is easy. To get started you’ll need an email address and at least one contact telephone number.",
     },
     {
-      title: "Is it safe to shop on takealot.com?",
+      title: "Is it safe to shop on Codealot.com?",
       body: "We take the security of your payment and personal information seriously. See section 6 of our Terms and Conditions for details of options available to you, and the Payment FAQ above.",
     },
     {
       title: "Can you help me find an item?",
-      body: "If you know the department where your product is most likely to be stocked, you can browse our range using our 'Shop by Department' menu on the takealot.com homepage.",
+      body: "If you know the department where your product is most likely to be stocked, you can browse our range using our 'Shop by Department' menu on the Codealot.com homepage.",
     },
   ];
   return (
