@@ -13,49 +13,49 @@ export const MyAccountContainer = () => {
       type: "Orders",
       icon: CartIcon,
       links: [
-        { textLabel: "Orders", path: "./login" },
-        { textLabel: "Invoices", path: "./login" },
-        { textLabel: "Returns", path: "./login" },
-        { textLabel: "Product Reviews", path: "./login" },
+        { textLabel: "Orders", path: "/login" },
+        { textLabel: "Invoices", path: "/login" },
+        { textLabel: "Returns", path: "/login" },
+        { textLabel: "Product Reviews", path: "/login" },
       ],
     },
     {
       type: "Payments & Credit",
       icon: CardIcon,
       links: [
-        { textLabel: "Credit & Refunds", path: "./login" },
-        { textLabel: "Redeem Gift Voucher", path: "./login" },
+        { textLabel: "Credit & Refunds", path: "/login" },
+        { textLabel: "Redeem Gift Voucher", path: "/login" },
       ],
     },
     {
       type: "Digital Library",
       icon: DocumentIcon,
       links: [
-        { textLabel: "eBook Digital Library", path: "./login" },
-        { textLabel: "eBook Support", path: "./login" },
+        { textLabel: "eBook Digital Library", path: "/login" },
+        { textLabel: "eBook Support", path: "/login" },
       ],
     },
     {
       type: "Customer Information",
       icon: UserIcon,
       links: [
-        { textLabel: "Personal Details", path: "./login" },
-        { textLabel: "Address Book", path: "./login" },
-        { textLabel: "Newsletter Subscriptions", path: "./login" },
+        { textLabel: "Personal Details", path: "/login" },
+        { textLabel: "Address Book", path: "/login" },
+        { textLabel: "Newsletter Subscriptions", path: "/login" },
       ],
     },
     {
       type: "My Lists",
       icon: HeartIcon,
       links: [
-        { textLabel: "My Lists", path: "./login" },
-        { textLabel: "Create a List", path: "./login" },
+        { textLabel: "My Lists", path: "/login" },
+        { textLabel: "Create a List", path: "/login" },
       ],
     },
     {
       type: "Support",
       icon: QuestionIcon,
-      links: [{ textLabel: "Help", path: "./login" }],
+      links: [{ textLabel: "Help", path: "/help" }],
     },
   ];
 
