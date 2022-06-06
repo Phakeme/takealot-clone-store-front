@@ -12,7 +12,7 @@ export const SideBarCategorySingleLink = ({ label }) => {
   };
 
   return (
-    <li
+    <div
       className="bg-white w-full h-6 hover: hover:bg-blue hover:text-white  items-center px-3 flex justify-between cursor-pointer"
       onClick={() => handleSubmit(label)}
     >
@@ -20,6 +20,6 @@ export const SideBarCategorySingleLink = ({ label }) => {
       <span className="fill-white">
         <img width="8px" src={rightIcon} alt="down" />
       </span>
-    </li>
+    </div>
   );
 };
