@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FooterModule } from "./FooterModule";
 import { footerModulesData, footerLogosData } from "./data";
 import { DownloadOurAppSection } from "./DownloadOurAppSection";
+import { useChecResultContext } from "../../Context/ChecContextProvider";
 
 export const Footer = () => {
   const location = useLocation();
   const currentURL = location.pathname === "/help";
   const [catergories, setCatergories] = useState(null);
+
+  const navigate = useNavigate();
+  const { queryProduct } = useChecResultContext();
+  const handleSubmit = (textQuery) => {
+    queryProduct(textQuery);
+    navigate("/results", { replace: true });
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     axios
       .get("/hero-navigations")
@@ -31,13 +41,13 @@ export const Footer = () => {
         </div>
         <div className="container mx-auto p-6 hidden md:block">
           {catergories?.heroNavLinks?.map((item, index) => (
-            <Link
-              className="text-blue hover:underline mr-2 pr-2 text-xs"
-              to={item?.path}
+            <span
+              onClick={() => handleSubmit(item?.label)}
+              className="cursor-pointer text-blue hover:underline mr-2 pr-2 text-xs"
               key={index}
             >
               {item?.label}
-            </Link>
+            </span>
           ))}
         </div>
         <div className="bg-blue">
