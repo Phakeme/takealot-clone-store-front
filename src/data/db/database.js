@@ -2,9 +2,27 @@ import Mock from "../mock.js";
 import CartGreen from "../../images/cart-green.svg";
 import Heart from "../../images/heart-red.svg";
 import AdvertLiquor from "../../images/ad-1.png";
-import AdvertHome from "../../images/ad-2.png";
-import AdvertGardena from "../../images/ad-3.png";
-import AdvertPhones from "../../images/ad-4.png";
+import AdvertWasher from "../../images/ad-2.png";
+import AdvertPhillips from "../../images/ad-3.png";
+import AdvertFragrance from "../../images/ad-4.png";
+import Automotive from "../../images/ShopbyDepartments/automotive.jpg";
+import Baby from "../../images/ShopbyDepartments/baby.jpg";
+import Beauty from "../../images/ShopbyDepartments/beauty.jpg";
+import Books from "../../images/ShopbyDepartments/books.jpg";
+import Gaming from "../../images/ShopbyDepartments/gaming.jpg";
+import Camping from "../../images/ShopbyDepartments/camping.jpg";
+import Luggage from "../../images/ShopbyDepartments/luggage.jpg";
+import Cellphone from "../../images/ShopbyDepartments/cellphone.jpg";
+import Computer from "../../images/ShopbyDepartments/computer.jpg";
+import Garden from "../../images/ShopbyDepartments/garden.jpg";
+import Groceries from "../../images/ShopbyDepartments/groceries.jpg";
+import Health from "../../images/ShopbyDepartments/health.jpg";
+import Liquor from "../../images/ShopbyDepartments/liquor.jpg";
+import Office from "../../images/ShopbyDepartments/office.jpg";
+import Toys from "../../images/ShopbyDepartments/toys.jpg";
+import Sport from "../../images/ShopbyDepartments/sport.jpg";
+import Audio from "../../images/ShopbyDepartments/audio.jpg";
+import Pets from "../../images/ShopbyDepartments/pets.jpg";
 
 const database = {
   navigations: {
@@ -21,31 +39,31 @@ const database = {
   },
   heroNavigations: {
     heroNavLinks: [
-      { label: "Automotive & DIY", path: "/automotive" },
-      { label: "Baby & Toddler", path: "/baby-toddler" },
-      { label: "Beauty", path: "/Beauty" },
-      { label: "Books & Courses", path: "/books-courses" },
-      { label: "Camping & Outdoor", path: "/camping-outdoor" },
-      { label: "Cellphones & Wearables", path: "/cellphones-wearables" },
-      { label: "Fashion & Luggage", path: "/fashion-luggage" },
-      { label: "Computers & Electronics", path: "/computers-electronics" },
-      { label: "Gaming", path: "/gaming" },
-      { label: "Garden, Pool & Patio", path: "/garden-Pool-Patio" },
-      { label: "Groceries & Household", path: "/groceries-household" },
-      { label: "Health & Personal Care", path: "/health-personal-care" },
-      { label: "Liquor", path: "/Liquor" },
-      { label: "Office & Stationery", path: "/office-Stationery" },
-      { label: "Pets", path: "/pets" },
-      { label: "Sport & Training", path: "/sport-training" },
-      { label: "Toys", path: "/toys" },
-      { label: "TV, Audio & Media", path: "/tv-audio-media" },
+      { label: "Automotive & DIY", image: Automotive },
+      { label: "Baby & Toddler", image: Baby },
+      { label: "Beauty", image: Beauty },
+      { label: "Books & Courses", image: Books },
+      { label: "Camping & Outdoor", image: Camping },
+      { label: "Cellphones & Wearables", image: Cellphone },
+      { label: "Fashion & Luggage", image: Luggage },
+      { label: "Computers & Electronics", image: Computer },
+      { label: "Gaming", image: Gaming },
+      { label: "Garden, Pool & Patio", image: Garden },
+      { label: "Groceries & Household", image: Groceries },
+      { label: "Health & Personal Care", image: Health },
+      { label: "Liquor", image: Liquor },
+      { label: "Office & Stationery", image: Office },
+      { label: "Pets", image: Pets },
+      { label: "Sport & Training", image: Sport },
+      { label: "Toys", image: Toys },
+      { label: "TV, Audio & Media", image: Audio },
     ],
   },
   adverts: [
-    { path: "/liquor", image: AdvertLiquor, label: "liquor" },
-    { path: "/liquor", image: AdvertHome, label: "home" },
-    { path: "/liquor", image: AdvertGardena, label: "gardena" },
-    // { path: "/liquor", image: AdvertPhones, label: "phones" },
+    { image: AdvertLiquor, label: "liquor" },
+    { image: AdvertFragrance, label: "Fragrance " },
+    { image: AdvertWasher, label: "Washer" },
+    { image: AdvertPhillips, label: "phillips" },
   ],
 };
 
