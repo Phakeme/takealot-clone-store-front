@@ -18,18 +18,24 @@ export const HomeContainer = () => {
   useEffect(() => getProducts(), []);
 
   const displayTextLabel = (textLabel) => {
-    let dynamicLabel;
+    let dynamicLabels;
     switch (textLabel) {
       case "beauty":
-        dynamicLabel = "Top Beauty Essentials";
+        dynamicLabels = {
+          dynamicLabel: "Top Beauty Essentials",
+          query: "beauty",
+        };
         break;
       case "computers-electronics":
-        dynamicLabel = "Shop These Electronics Deals";
+        dynamicLabels = {
+          dynamicLabel: "Shop These Electronics Deals",
+          query: "hp",
+        };
         break;
       default:
         break;
     }
-    return dynamicLabel;
+    return dynamicLabels;
   };
 
   return (
@@ -62,7 +68,8 @@ export const HomeContainer = () => {
                 {categories.map((catergory) => (
                   <ProductsPreviews
                     key={catergory}
-                    labelText={displayTextLabel(catergory)}
+                    labelText={displayTextLabel(catergory)?.dynamicLabel}
+                    query={displayTextLabel(catergory)?.query}
                   >
                     {products
                       ?.filter(
