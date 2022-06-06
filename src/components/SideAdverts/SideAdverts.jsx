@@ -1,8 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { SingleAdvert } from "./SingleAdvert";
+import { useNavigate } from "react-router-dom";
+import { useChecResultContext } from "../../Context/ChecContextProvider";
 export const SideAdverts = () => {
   const [adverts, setAdverts] = useState(null);
+  let navigate = useNavigate();
+  const { queryProduct } = useChecResultContext();
+
+  const handleSubmit = (textQuery) => {
+    queryProduct(textQuery);
+    navigate("/results", { replace: true });
+  };
 
   useEffect(() => {
     axios
@@ -15,8 +23,14 @@ export const SideAdverts = () => {
 
   return (
     <div className="absolute w-full">
-      {adverts?.map(({ label, path, image }, index) => (
-        <SingleAdvert key={index} label={label} path={path} image={image} />
+      {adverts?.map(({ label, image }, index) => (
+        <div
+          onClick={() => handleSubmit(label)}
+          key={index}
+          className="mt-4 h-[343px] shadow border-4 border-white overflow-hidden cursor-pointer"
+        >
+          <img height="100%" src={image} alt={label} />
+        </div>
       ))}
     </div>
   );
