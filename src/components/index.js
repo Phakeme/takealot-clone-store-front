@@ -24,8 +24,10 @@ import { AccountType } from "./Account/index";
 import { QNA } from "./Help/QNA";
 import { Hero } from "./Sell/Hero";
 import { SellSection } from "./Sell/SellSection";
+import { Alert } from "./Utils/Alert/Alert";
 export {
   SellSection,
+  Alert,
   Hero,
   AccountType,
   EmptyItems,
