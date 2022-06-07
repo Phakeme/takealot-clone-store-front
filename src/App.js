@@ -1,3 +1,6 @@
+import React from "react";
+import { useChecResultContext } from "./Context/ChecContextProvider";
+
 import {
   HomeContainer,
   HelpContainer,
@@ -10,15 +13,23 @@ import {
   SellContainer,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MainHeader, CovidBanner, Footer, ScrollToTop } from "./components";
+import {
+  MainHeader,
+  CovidBanner,
+  Footer,
+  ScrollToTop,
+  Alert,
+} from "./components";
 
 function App() {
+  const { successCart } = useChecResultContext();
   return (
     <div className="text-gray-700">
       <BrowserRouter>
         <ScrollToTop />
         <CovidBanner />
         <MainHeader />
+        {successCart && <Alert />}
         <Routes>
           <Route exact path="/" element={<HomeContainer />}></Route>
           <Route exact path="/help" element={<HelpContainer />}></Route>
