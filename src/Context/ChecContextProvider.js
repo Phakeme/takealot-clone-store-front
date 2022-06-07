@@ -13,6 +13,14 @@ export const ChecContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [cart, setCart] = useState({});
   const [movingItem, setMovingItem] = useState(null);
+  const [successCart, setSuccessCart] = useState(false);
+
+  useEffect(() => {
+    if (successCart === false) return;
+    setTimeout(() => {
+      setSuccessCart(false);
+    }, 5000);
+  }, [successCart]);
 
   useEffect(() => {
     setIsCartLoading(true);
@@ -189,6 +197,7 @@ export const ChecContextProvider = ({ children }) => {
         setIsCartLoading(false);
         setIsLoading(false);
         setCart(cart, console.log(cart, "AddToCart Cart"));
+        setSuccessCart(true);
       })
       .catch(({ data }) => {
         setIsCartLoading(false);
@@ -217,6 +226,7 @@ export const ChecContextProvider = ({ children }) => {
         deleteFromWishlist,
         isWishlistLoading,
         queryProduct,
+        successCart,
       }}
     >
       {children}
