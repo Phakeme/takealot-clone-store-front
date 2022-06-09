@@ -10,7 +10,7 @@ Before you can start working with Codealot, you need to:
  
 2. Fork the [Codealot](https://github.com/Phakeme/codealot) repositorsy using the Fork button on GitHub.
 
-3. Clone the forked repositories to your computer using the following commands (replace [your account] with the account you forked the repositories to):
+3. Clone the forked repository to your computer using the following commands (replace [your account] with the account you forked the repositories to):
 git clone https://github.com/[your_account]/codealot.git
 
 To run Codealot locally, you'll first need to install its dependencies and build the app locally.
@@ -27,10 +27,10 @@ npm install
 You will need the get the api access token from 
 [Commercejs](https://commercejs.com/docs/)
 
-1. Create an acount with [Commercejs](https://commercejs.com/docs/)
+1. Create an account with [Commercejs](https://commercejs.com/docs/)
 2. Login to your account and create a new store.
-3. Create atleast 6 products for your new store.
-4. On your dashboard under developer tap, click API keys & CORS to get your api access token.
+3. Create at least 6 products for your new store.
+4. On your dashboard under developer tap, click API keys & CORS to get your API access token.
 5. Back to your local Codealot project, create an .env file on the root folder of your project.
 6. Paste your access token from [Commercejs](https://commercejs.com/docs/)
 
