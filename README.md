@@ -8,7 +8,7 @@
 Before you can start working with Codealot, you need to:
 1. Install git, Node.js (>= 16.0.0).
  
-2. Fork the [Codealot](https://github.com/Phakeme/codealot) repositorsy using the Fork button on GitHub.
+2. Fork the [Codealot](https://github.com/Phakeme/codealot) repository using the Fork button on GitHub.
 
 3. Clone the forked repository to your computer using the following commands (replace [your account] with the account you forked the repositories to):
 git clone https://github.com/[your_account]/codealot.git
