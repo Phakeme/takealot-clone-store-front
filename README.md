@@ -27,7 +27,7 @@ npm install
 You will need the get the api access token from 
 [Commercejs](https://commercejs.com/docs/)
 
-1. Create an count with [Commercejs](https://commercejs.com/docs/)
+1. Create an acount with [Commercejs](https://commercejs.com/docs/)
 2. Login to your account and create a new store.
 3. Create atleast 6 products for your new store.
 4. On your dashboard under developer tap, click API keys & CORS to get your api access token.
