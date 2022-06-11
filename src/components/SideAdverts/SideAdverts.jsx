@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useChecResultContext } from "../../Context/ChecContextProvider";
-export const SideAdverts = () => {
+export const SideAdverts = ({ numberOfCategories = 4 }) => {
   const [adverts, setAdverts] = useState(null);
   let navigate = useNavigate();
   const { queryProduct } = useChecResultContext();
@@ -23,7 +23,7 @@ export const SideAdverts = () => {
 
   return (
     <div className="absolute w-full">
-      {adverts?.map(({ label, image }, index) => (
+      {adverts?.slice(0, numberOfCategories).map(({ label, image }, index) => (
         <div
           onClick={() => handleSubmit(label)}
           key={index}
