@@ -3,8 +3,8 @@ import commerce from "../lip/commerce";
 const ChecResultContext = createContext();
 
 export const ChecContextProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState(null);
+  const [categories, setCategories] = useState(null);
   const [isProductsLoading, setIsProductsLoading] = useState(true);
   const [singleProduct, setSingleProduct] = useState(null);
   const [isSingleProductLoading, setIsSingleProductLoading] = useState(false);
@@ -91,27 +91,39 @@ export const ChecContextProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  // Save Catergories in an Array State
-  const createCatergories = (products) => {
-    products.map((item) => {
-      if (!categories?.includes(item.categories[0].slug)) {
-        // console.log(item.categories[0].slug);
-        categories.push(item.categories[0].slug);
-      }
-      return setCategories(categories);
-    });
-  };
-
   const getProducts = () => {
     setIsProductsLoading(true);
-    if (localStorage.getItem("products") === null) {
+    let getLocalStoredProducts = JSON.parse(localStorage.getItem("products"));
+    let getLocalStoredCategories = JSON.parse(
+      localStorage.getItem("categories")
+    );
+    // console.log(getLocalStoredProducts, getLocalStoredCategories);
+    // return;
+
+    // Retrieve categories and save them in a LocalStorage
+    if (!getLocalStoredCategories) {
+      commerce.categories.list().then((response) => {
+        if (response.data) {
+          localStorage.setItem("categories", JSON.stringify(response.data));
+          // console.log("Categories", response.data);
+          setCategories(response.data);
+        } else {
+          console.log("No categories found from the server!");
+        }
+      });
+    } else {
+      setCategories(getLocalStoredCategories);
+    }
+
+    if (!getLocalStoredProducts) {
       commerce.products
         .list()
-        .then((products) => {
-          setProducts(products.data);
-          localStorage.setItem("products", JSON.stringify(products.data));
-          if (products.data) {
-            createCatergories(products.data);
+        .then((response) => {
+          if (response.data) {
+            setProducts(response.data);
+            localStorage.setItem("products", JSON.stringify(response.data));
+          } else {
+            console.log("no products were found from the server");
           }
           setIsProductsLoading(false);
         })
@@ -120,10 +132,7 @@ export const ChecContextProvider = ({ children }) => {
           setIsProductsLoading(false);
         });
     } else {
-      setProducts(JSON.parse(localStorage.getItem("products")));
-      if (products) {
-        createCatergories(JSON.parse(localStorage.getItem("products")));
-      }
+      setProducts(getLocalStoredProducts);
       setIsProductsLoading(false);
     }
   };
