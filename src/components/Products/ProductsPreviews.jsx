@@ -7,6 +7,7 @@ export const ProductsPreviews = ({ labelText, query, children }) => {
   let navigate = useNavigate();
   const { queryProduct } = useChecResultContext();
   const handleSubmit = (textQuery) => {
+    if (!textQuery) return;
     queryProduct(textQuery);
     navigate("/results", { replace: true });
   };
@@ -22,7 +23,6 @@ export const ProductsPreviews = ({ labelText, query, children }) => {
           className="py-1 px-2 border border-gray-800 rounded hover:bg-gray-800 hover:text-white cursor-pointer"
           onClick={() => handleSubmit(query)}
         >
-          {/* <h2 className="text-sm">View More {query}</h2> */}
           <h2 className="text-sm">View More</h2>
         </div>
       </div>
