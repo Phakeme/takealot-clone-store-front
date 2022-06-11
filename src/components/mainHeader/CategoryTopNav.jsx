@@ -4,8 +4,8 @@ import { CategoryTopNavSingleLink } from "./CategoryTopNavSingleLink";
 export const CategoryTopNav = ({ heroNavigations }) => {
   return (
     <ul className="bg-gray-100 rounded h-full flex divide-x-2">
-      {heroNavigations?.heroNavLinks?.slice(0, 5).map(({ label, path }) => (
-        <CategoryTopNavSingleLink key={path} label={label} path={path} />
+      {heroNavigations?.heroNavLinks?.slice(0, 5).map(({ label }, index) => (
+        <CategoryTopNavSingleLink key={index} label={label} />
       ))}
     </ul>
   );
