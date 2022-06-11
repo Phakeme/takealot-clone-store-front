@@ -17,26 +17,7 @@ export const HomeContainer = () => {
   // eslint-disable-next-line
   useEffect(() => getProducts(), []);
 
-  const displayTextLabel = (textLabel) => {
-    let dynamicLabels;
-    switch (textLabel) {
-      case "beauty":
-        dynamicLabels = {
-          dynamicLabel: "Top Beauty Essentials",
-          query: "beauty",
-        };
-        break;
-      case "computers-electronics":
-        dynamicLabels = {
-          dynamicLabel: "Shop These Electronics Deals",
-          query: "hp",
-        };
-        break;
-      default:
-        break;
-    }
-    return dynamicLabels;
-  };
+  if (isProductsLoading) return <LoaderSpinner />;
 
   return (
     <>
@@ -54,37 +35,51 @@ export const HomeContainer = () => {
           </div>
           <div className="hidden lg:block w-full relative">
             <CheckOrderBanner />
-            <SideAdverts />
+            {products && <SideAdverts />}
           </div>
         </div>
       </section>
       <section className="bg-gray-100 pb-4">
         <div className="container mx-auto">
           <div className="grid pb-3 grid-cols-1 lg:grid-cols-[1fr,325px]">
-            {isProductsLoading ? (
-              <LoaderSpinner />
+            {!products ? (
+              <div className="bg-white border w-full h-[300px] flex items-center text-center justify-center mt-6 rounded">
+                <div>
+                  <h2 className="text-[20px] text-red-600 font-bold">
+                    No Products Found
+                  </h2>
+                  <p className="text-sm">Please try agian later :(</p>
+                </div>
+              </div>
             ) : (
               <div>
-                {categories.map((catergory) => (
-                  <ProductsPreviews
-                    key={catergory}
-                    labelText={displayTextLabel(catergory)?.dynamicLabel}
-                    query={displayTextLabel(catergory)?.query}
-                  >
-                    {products
-                      ?.filter(
-                        (product) => product?.categories[0]?.slug === catergory
-                      )
-                      ?.slice(0, 3)
-                      .map((item) => (
-                        <div key={item.id}>
-                          <div className="h-full">
-                            <ProductCard product={item} />
-                          </div>
-                        </div>
-                      ))}
-                  </ProductsPreviews>
-                ))}
+                {categories.slice(0, 4).map((catergory, index) => {
+                  if (catergory.products < 3) {
+                    return null;
+                  } else {
+                    return (
+                      <ProductsPreviews
+                        key={index}
+                        labelText={catergory?.description}
+                        query={catergory?.name}
+                      >
+                        {products
+                          ?.filter(
+                            (product) =>
+                              product?.categories[0]?.name === catergory.name
+                          )
+                          ?.slice(0, 3)
+                          .map((item) => (
+                            <div key={item.id}>
+                              <div className="h-full">
+                                <ProductCard product={item} />
+                              </div>
+                            </div>
+                          ))}
+                      </ProductsPreviews>
+                    );
+                  }
+                })}
               </div>
             )}
           </div>
