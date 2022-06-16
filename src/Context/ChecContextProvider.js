@@ -5,9 +5,9 @@ const ChecResultContext = createContext();
 export const ChecContextProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
   const [categories, setCategories] = useState(null);
-  const [isProductsLoading, setIsProductsLoading] = useState(true);
+  const [isProductsLoading, setIsProductsLoading] = useState(false);
   const [singleProduct, setSingleProduct] = useState(null);
-  const [isSingleProductLoading, setIsSingleProductLoading] = useState(false);
+  const [isSingleProductLoading, setIsSingleProductLoading] = useState(true);
   const [isCartLoading, setIsCartLoading] = useState(false);
   const [isWishlistLoading, setIsWishlistLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -93,19 +93,16 @@ export const ChecContextProvider = ({ children }) => {
 
   const getProducts = () => {
     setIsProductsLoading(true);
-    let getLocalStoredProducts = JSON.parse(localStorage.getItem("products"));
+
     let getLocalStoredCategories = JSON.parse(
       localStorage.getItem("categories")
     );
-    // console.log(getLocalStoredProducts, getLocalStoredCategories);
-    // return;
 
     // Retrieve categories and save them in a LocalStorage
     if (!getLocalStoredCategories) {
       commerce.categories.list().then((response) => {
         if (response.data) {
           localStorage.setItem("categories", JSON.stringify(response.data));
-          // console.log("Categories", response.data);
           setCategories(response.data);
         } else {
           console.log("No categories found from the server!");
@@ -115,56 +112,35 @@ export const ChecContextProvider = ({ children }) => {
       setCategories(getLocalStoredCategories);
     }
 
-    if (!getLocalStoredProducts) {
-      commerce.products
-        .list()
-        .then((response) => {
-          if (response.data) {
-            setProducts(response.data);
-            localStorage.setItem("products", JSON.stringify(response.data));
-          } else {
-            console.log("no products were found from the server");
-          }
-          setIsProductsLoading(false);
-        })
-        .catch((error) => {
-          console.log("There was an error fetching the products", error);
-          setIsProductsLoading(false);
-        });
-    } else {
-      setProducts(getLocalStoredProducts);
-      setIsProductsLoading(false);
-    }
+    commerce.products
+      .list()
+      .then((response) => {
+        if (response.data) {
+          setProducts(response.data);
+        } else {
+          console.log("no products were found from the server");
+        }
+        setIsProductsLoading(false);
+      })
+      .catch((error) => {
+        console.log("There was an error fetching the products", error);
+        setIsProductsLoading(false);
+      });
   };
 
   // Retrieve a product by it's ID
   const getSingleProduct = (productId) => {
-    setIsSingleProductLoading(true);
-    let localProductId = JSON.parse(localStorage.getItem("singleProduct"));
-
-    if (localProductId !== null) localProductId = localProductId.id;
-
-    if (
-      (localStorage.getItem("singleProduct") === null) |
-      (localProductId !== productId)
-    ) {
-      commerce.products
-        .retrieve(productId)
-        .then((response) => {
-          setSingleProduct(response);
-          setIsSingleProductLoading(false);
-          if (response) {
-            localStorage.setItem("singleProduct", JSON.stringify(response));
-          }
-        })
-        .catch((error) => {
-          console.log("There was an error fetching the products", error);
-          setIsSingleProductLoading(false);
-        });
-    } else {
-      setSingleProduct(JSON.parse(localStorage.getItem("singleProduct")));
-      setIsSingleProductLoading(false);
-    }
+    setIsSingleProductLoading(false);
+    commerce.products
+      .retrieve(productId)
+      .then((response) => {
+        setSingleProduct(response);
+        setIsSingleProductLoading(false);
+      })
+      .catch((error) => {
+        console.log("There was an error fetching the products", error);
+        setIsSingleProductLoading(false);
+      });
   };
 
   // Retrieve a product by query
