@@ -130,7 +130,7 @@ export const ChecContextProvider = ({ children }) => {
 
   // Retrieve a product by it's ID
   const getSingleProduct = (productId) => {
-    setIsSingleProductLoading(false);
+    setIsSingleProductLoading(true);
     commerce.products
       .retrieve(productId)
       .then((response) => {
@@ -139,6 +139,7 @@ export const ChecContextProvider = ({ children }) => {
       })
       .catch((error) => {
         console.log("There was an error fetching the products", error);
+        setSingleProduct("404");
         setIsSingleProductLoading(false);
       });
   };
