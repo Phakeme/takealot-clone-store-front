@@ -28,7 +28,7 @@ export const MainHeader = () => {
   }, []);
 
   return (
-    <header>
+    <header className="relative">
       {isSideBarOpen && <MobileSideBar />}
       <div className="h-full h-[60px] container mx-auto bg-white">
         <PagesTopNavigation />

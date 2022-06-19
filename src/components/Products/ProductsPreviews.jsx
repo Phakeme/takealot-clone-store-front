@@ -27,9 +27,7 @@ export const ProductsPreviews = ({ labelText, query, children }) => {
         </div>
       </div>
       <div className="" />
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:h-[280px] xl:h-[315px]">
-        {children}
-      </div>
+      <div>{children}</div>
     </>
   );
 };

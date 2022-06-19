@@ -18,7 +18,7 @@ export const LogoCarousel = () => {
       {data?.map(({ path, image }, index) => (
         <a key={index} href={path} target="_blank" rel="noreferrer">
           <div className="flex justify-center items-center h-full">
-            <img width="50%" src={image} alt="logo-preview" />
+            <img className="w-2/3 md:w-1/2" src={image} alt="logo-preview" />
           </div>
         </a>
       ))}

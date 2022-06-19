@@ -60,10 +60,10 @@ export const MyAccountContainer = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-3 ">
+    <section className="bg-gray-100 py-1 md:py-3">
       <div className="container mx-auto ">
         <PageTitle titeLabel="My Account" />
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
           {data.map((item, index) => (
             <AccountType key={index} item={item} />
           ))}

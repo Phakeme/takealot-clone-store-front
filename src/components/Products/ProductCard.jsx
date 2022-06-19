@@ -20,16 +20,15 @@ export const ProductCard = ({ product }) => {
     };
   };
   return (
-    <div className="bg-white h-full  w-full p-3 border border-gray-200 rounded hover:drop-shadow-md flex flex-col ">
+    <div className="bg-white h-full  w-full p-3 border border-gray-200 rounded hover:drop-shadow-md flex flex-col w-2/3 sm:w-full mx-auto">
       <div className="h-full">
         <Link to={`/product/${product.id}`}>
           <div className="h-full flex justify-between flex-col">
             {product?.image ? (
-              <div className="w-full flex items-center justify-center mb-3  min-h-[150px] lg:h-3/5">
+              <div className="w-full flex items-center justify-center mb-3  min-h-[100px] lg:h-3/5">
                 <img
-                  className=""
+                  className="p-3 w-2/3 sm:w-3/4 lg:w-5/6"
                   loading="lazy"
-                  width="70%"
                   src={product?.image?.url}
                   alt="product"
                 />

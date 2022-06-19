@@ -19,15 +19,32 @@ export const HomeContainer = () => {
 
   if (isProductsLoading) return <LoaderSpinner />;
 
+  let DisplayedProducts = ({ catergory, numOfColums = 3 }) => {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 lg:min-h-[280px]">
+        {products
+          ?.filter((product) => product?.categories[0]?.name === catergory.name)
+          ?.slice(0, numOfColums)
+          .map((item) => (
+            <div key={item.id}>
+              <div className="h-full">
+                <ProductCard product={item} />
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  };
+
   return (
     <>
       <section className="container mx-auto" data-testid="home-page">
-        <div className="grid grid-cols-1  lg:grid-cols-[198px,1fr,300px] gap-6 h-[440px] mt-0 md:mt-5">
+        <div className="grid grid-cols-1 lg:grid-cols-[198px,1fr,300px] gap-6 h-fit pb-2 md:h-[440px] mt-0 md:mt-5">
           <div className="hidden lg:block" />
           <div className="">
             <MainCarousel />
             <div className="flex flex-col">
-              <h3 className="py-4 font-semibold">
+              <h3 className="py-2 md:py-4 font-semibold text-center md:text-left">
                 See My Other Portfolio Projects
               </h3>
               <LogoCarousel />
@@ -63,19 +80,15 @@ export const HomeContainer = () => {
                         labelText={catergory?.description}
                         query={catergory?.name}
                       >
-                        {products
-                          ?.filter(
-                            (product) =>
-                              product?.categories[0]?.name === catergory.name
-                          )
-                          ?.slice(0, 3)
-                          .map((item) => (
-                            <div key={item.id}>
-                              <div className="h-full">
-                                <ProductCard product={item} />
-                              </div>
-                            </div>
-                          ))}
+                        <div className="block xl:hidden">
+                          <DisplayedProducts catergory={catergory} />
+                        </div>
+                        <div className="hidden xl:block">
+                          <DisplayedProducts
+                            catergory={catergory}
+                            numOfColums={4}
+                          />
+                        </div>
                       </ProductsPreviews>
                     );
                   }

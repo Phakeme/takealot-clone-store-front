@@ -24,7 +24,7 @@ export const MobileSideBar = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-[276px,1fr] h-screen w-full absolute bg-black/70 z-20">
+    <div className="grid grid-cols-[276px,1fr] h-screen w-full bg-black/70 z-30 fixed top-0">
       <div className="bg-gray-100 w-full">
         <div
           className="pl-6 bg-white border-b border-gray-200 w-full h-16 flex items-center"

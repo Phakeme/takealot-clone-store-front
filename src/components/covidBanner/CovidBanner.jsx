@@ -13,7 +13,7 @@ export const CovidBanner = () => {
   };
 
   return (
-    <div className="bg-blue text-white text-sm text-center p-2">
+    <div className="hidden md:block bg-blue text-white text-sm text-center p-2">
       <div className=" grid grid-rows-1 grid-cols-[1fr,50px] items-center">
         <div className="justify-self-center">
           <p>
