@@ -25,7 +25,9 @@ import { QNA } from "./Help/QNA";
 import { Hero } from "./Sell/Hero";
 import { SellSection } from "./Sell/SellSection";
 import { Alert } from "./Utils/Alert/Alert";
+import { SingleProductNotFound } from "./SingleProduct/singleProductNoFound";
 export {
+  SingleProductNotFound,
   SellSection,
   Alert,
   Hero,
