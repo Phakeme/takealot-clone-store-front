@@ -29,7 +29,7 @@ export const PagesTopNavigation = () => {
         <div className="hidden lg:flex items-center divide-x">
           <PagesTopNavSingleLink path="/help" label="Help" />
           {!currentURL && (
-            <PagesTopNavSingleLink path="/login" label="Sell on Codealot" />
+            <PagesTopNavSingleLink path="/sell" label="Sell on Codealot" />
           )}
         </div>
       </div>
