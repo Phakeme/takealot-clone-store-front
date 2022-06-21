@@ -34,8 +34,8 @@ export const Footer = () => {
     return (
       <footer className="bg-white h-[200px]">
         <div className="container py-8 mx-auto grid grid-cols-1 lg:grid-cols-5 border-b">
-          {[0, 1, 2, 3].map((_, index) => (
-            <FooterModule key={index} footerModule={footerModulesData[index]} />
+          {footerModulesData.map((module, index) => (
+            <FooterModule key={index} footerModule={module}/>
           ))}
           <DownloadOurAppSection />
         </div>
