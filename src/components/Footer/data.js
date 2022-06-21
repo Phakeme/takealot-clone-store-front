@@ -45,7 +45,7 @@ export const footerModulesData = [
     footerLinks: [
       { textlabel: "About Us", path: "/login" },
       { textlabel: "Careers", path: "/login" },
-      { textlabel: "Sell on Codealot", path: "/login" },
+      { textlabel: "Sell on Codealot", path: "/sell" },
       { textlabel: "Deliver for Codealot", path: "/login" },
       { textlabel: "Press & News", path: "/login" },
       { textlabel: "Terms & Conditions", path: "/login" },
