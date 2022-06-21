@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useChecResultContext } from "../../Context/ChecContextProvider";
-export const SideAdverts = ({ numberOfCategories = 4 }) => {
+export const SideAdverts = ({ numberOfCategories = 3 }) => {
   const [adverts, setAdverts] = useState(null);
   let navigate = useNavigate();
   const { queryProduct } = useChecResultContext();
