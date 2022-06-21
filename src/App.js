@@ -12,7 +12,7 @@ import {
   SearchProductsContainer,
   SellContainer,
 } from "./pages";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   MainHeader,
   CovidBanner,
@@ -32,6 +32,7 @@ function App() {
         {successCart && <Alert />}
         <Routes>
           <Route exact path="/" element={<HomeContainer />}></Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
           <Route exact path="/help" element={<HelpContainer />}></Route>
           <Route exact path="/login" element={<LoginContainer />}></Route>
           <Route exact path="/cart" element={<CartContainer />}></Route>
