@@ -36,13 +36,15 @@ export const MobileMainHeader = () => {
             >
               <img width="18px" src={Search} alt="search" />
             </div>
-            <div className="p-2 hover: cursor-pointer">
-              <img
-                width="23px"
-                src={BlackShoppingCart}
-                alt="black-shoping-cart"
-              />
-            </div>
+            <Link to="/cart">
+              <div className="p-2 hover: cursor-pointer">
+                <img
+                  width="23px"
+                  src={BlackShoppingCart}
+                  alt="black-shoping-cart"
+                />
+              </div>
+            </Link>
           </div>
         </div>
       ) : (
