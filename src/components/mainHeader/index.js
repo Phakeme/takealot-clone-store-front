@@ -9,12 +9,23 @@ import { CategoryTopNav } from "./CategoryTopNav";
 import { SideBarCategoryNavigations } from "./SideBarCategoryNavigations";
 import { SearchBox } from "../SearchBox";
 import Arrow from "../../images/help/right-arrow.svg";
+import ArrowUP from "../../images/arrow-up-white.svg";
 
 export const MainHeader = () => {
   const location = useLocation();
   const currentURL = location.pathname === "/help";
   const [heroNavigations, setHeroNavigations] = useState(false);
   const isSideBarOpen = useSelector((state) => state.sidebarIsOpen.value);
+  const [showBackTopButton, setShowBackTopButton] = useState(false);
+
+  const showToTopButton = () => {
+    if (window.scrollY >= 554) {
+      setShowBackTopButton(true);
+    } else {
+      setShowBackTopButton(false);
+    }
+  };
+  window.addEventListener("scroll", showToTopButton);
 
   useEffect(() => {
     axios
@@ -29,6 +40,14 @@ export const MainHeader = () => {
 
   return (
     <header className="relative">
+      {showBackTopButton && (
+        <div
+          className="bg-black drop-shadow-lg rounded-full p-4 z-[100] w-[50px] h-[50px] fixed bottom-[50px]  right-[50px] cursor-pointer"
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          <img width="100%" src={ArrowUP} alt="arrow-up" />
+        </div>
+      )}
       {isSideBarOpen && <MobileSideBar />}
       <div className="h-full h-[60px] container mx-auto bg-white">
         <PagesTopNavigation />
