@@ -1,25 +1,27 @@
-import React from "react";
-import { useChecResultContext } from "./Context/ChecContextProvider";
-
 import {
-  HomeContainer,
-  HelpContainer,
-  SingleProductContainer,
-  LoginContainer,
-  CartContainer,
-  WishListContainer,
-  MyAccountContainer,
-  SearchProductsContainer,
-  SellContainer,
-} from "./pages";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import {
-  MainHeader,
+  Alert,
   CovidBanner,
   Footer,
+  MainHeader,
   ScrollToTop,
-  Alert,
 } from "./components";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  CartContainer,
+  HelpContainer,
+  HomeContainer,
+  LoginContainer,
+  SearchProductsContainer,
+  SellContainer,
+  SingleProductContainer,
+  WishListContainer,
+} from "./pages";
+import React, { Suspense, lazy } from 'react'
+
+import { useChecResultContext } from "./Context/ChecContextProvider";
+
+const  MyAccountContainer  = lazy(() => import('./pages/my-account/MyAccountContainer'))
+
 
 function App() {
   const { successCart } = useChecResultContext();
@@ -37,7 +39,11 @@ function App() {
           <Route exact path="/login" element={<LoginContainer />}></Route>
           <Route exact path="/cart" element={<CartContainer />}></Route>
           <Route exact path="/wishlist" element={<WishListContainer />}></Route>
-          <Route exact path="/account" element={<MyAccountContainer />}></Route>
+          <Route exact path="/account" element={
+            <Suspense fallback={React.Fragment}>
+              <MyAccountContainer />
+            </Suspense>
+          }></Route>
           <Route
             exact
             path="/product/:productId"
