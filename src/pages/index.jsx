@@ -1,12 +1,12 @@
-import { HomeContainer } from "./HomeContainer";
-import { HelpContainer } from "./HelpContainer";
-import { SingleProductContainer } from "./SingleProductContainer";
-import { LoginContainer } from "./LoginContainer";
 import { CartContainer } from "./CartContainer";
-import { WishListContainer } from "./WishListContainer";
-import { MyAccountContainer } from "./MyAccountContainer";
+import { HelpContainer } from "./HelpContainer";
+import { HomeContainer } from "./HomeContainer";
+import { LoginContainer } from "./LoginContainer";
+import  MyAccountContainer  from "../pages/my-account/MyAccountContainer";
 import { SearchProductsContainer } from "./SearchProductsContainer";
 import { SellContainer } from "./SellContainer";
+import { SingleProductContainer } from "./SingleProductContainer";
+import { WishListContainer } from "./WishListContainer";
 
 export {
   HomeContainer,
