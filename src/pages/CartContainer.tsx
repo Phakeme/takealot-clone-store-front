@@ -1,16 +1,18 @@
-import React from "react";
-import EmptyCart from "../images/Cart/empty-cart.svg";
-import { useChecResultContext } from "../Context/ChecContextProvider";
 import {
-  CartSummary,
-  CartSummaryInfo,
-  CartProduct,
-  LoaderSpinner,
   EmptyItems,
+  LoaderSpinner,
 } from "../components";
 
+import { CartProduct } from "../modules/cart/components/CartProduct";
+import { CartProductItem } from "../modules/cart/types/types";
+import { CartSummary } from "../modules/cart/components/CartSummary"
+import { CartSummaryInfo } from "../modules/cart/components/CartSummaryInfo"
+import EmptyCart from "../images/Cart/empty-cart.svg";
+import React from "react";
+import { useCartResultContext } from "../modules/cart/api/CartContextProvider";
+
 export const CartContainer = () => {
-  const { cart, isCartLoading } = useChecResultContext();
+  const { cart, isCartLoading } = useCartResultContext();
 
   if (isCartLoading) {
     return (
@@ -35,7 +37,7 @@ export const CartContainer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_325px] gap-1 lg:gap-6">
             <div className="">
               <div className="h-fit">
-                {cart?.line_items?.map((product, index) => (
+                {cart?.line_items?.map((product: CartProductItem) => (
                   <CartProduct key={product?.id} product={product} />
                 ))}
               </div>
@@ -46,7 +48,7 @@ export const CartContainer = () => {
               </h3>
             </div>
             <div>
-              <CartSummary cart={cart} />
+              <CartSummary total_items={cart?.total_items} subtotal={cart?.subtotal?.formatted_with_symbol?.split(".")[0]} />
               <CartSummaryInfo />
             </div>
           </div>

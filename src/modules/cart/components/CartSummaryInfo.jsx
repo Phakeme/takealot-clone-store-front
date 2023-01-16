@@ -1,7 +1,7 @@
+import CreditCard from "../../../images/Cart/card.svg";
+import Padlock from "../../../images/Cart/padlock.svg";
 import React from "react";
-import CreditCard from "../../images/Cart/card.svg";
-import Truck from "../../images/Cart/truck.svg";
-import Padlock from "../../images/Cart/padlock.svg";
+import Truck from "../../../images/Cart/truck.svg";
 
 export const CartSummaryInfo = () => {
   const data = [

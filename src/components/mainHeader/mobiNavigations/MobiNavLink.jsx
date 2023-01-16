@@ -1,11 +1,11 @@
-import React from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import React from "react";
 import { closeSideBar } from "../../../features/sideBar/sidebarIsOpenSlice";
-import { useChecResultContext } from "../../../Context/ChecContextProvider";
+import { useCartResultContext } from "../../../modules/cart/api/CartContextProvider";
+import { useDispatch } from "react-redux";
 
 export const MobiNavLink = ({ path, label, icon = null }) => {
-  const { cart } = useChecResultContext();
+  const { cart } = useCartResultContext();
   const dispatch = useDispatch();
   const cartLink = label === "Cart";
 

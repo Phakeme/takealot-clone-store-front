@@ -1,13 +1,14 @@
-import React from "react";
-import EmptyIcon from "../images/Wishlist/empty-list.svg";
 import {
   CreateWishList,
+  EmptyItems,
+  LoaderSpinner,
   PageTitle,
   Wishlist,
-  CartProduct,
-  LoaderSpinner,
-  EmptyItems,
 } from "../components";
+
+import {CartProduct} from "../modules/cart/components/CartProduct/index"
+import EmptyIcon from "../images/Wishlist/empty-list.svg";
+import React from "react";
 import { useChecResultContext } from "../Context/ChecContextProvider";
 
 export const WishListContainer = () => {

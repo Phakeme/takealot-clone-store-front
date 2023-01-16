@@ -1,11 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import Padlock from "../../images/Wishlist/padlock.svg";
 import { LoadingSpinner } from "../Utils/LoadingSpinner/index";
-import { useChecResultContext } from "../../Context/ChecContextProvider";
+import Padlock from "../../images/Wishlist/padlock.svg";
+import React from "react";
+import { useCartResultContext } from "../../modules/cart/api/CartContextProvider";
 
 export const Wishlist = ({ children }) => {
-  const { isCartLoading } = useChecResultContext();
+  const { isCartLoading } = useCartResultContext();
 
   if (isCartLoading) {
     return (

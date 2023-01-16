@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import StarIcon from "../../images/star-rating.svg";
-import CartIcon from "../../images/shopping-cart.svg";
-import PriceIcon from "../../images/slashed-price.svg";
 import { Button } from "../Utils/Button";
+import CartIcon from "../../images/shopping-cart.svg";
+import { Link } from "react-router-dom";
+import PriceIcon from "../../images/slashed-price.svg";
+import PropTypes from "prop-types";
+import React from "react";
+import StarIcon from "../../images/star-rating.svg";
+import { useCartResultContext } from "../../modules/cart/api/CartContextProvider";
 import { useLocation } from "react-router-dom";
-import { useChecResultContext } from "../../Context/ChecContextProvider";
 
 export const ProductCard = ({ product }) => {
-  const { isLoading, addToCart } = useChecResultContext();
+  const { isLoading, addToCart } = useCartResultContext();
   const location = useLocation();
   let currentURL = location.pathname === "/results";
   const calcDiscount = (price) => {

@@ -18,13 +18,13 @@ import {
 } from "./pages";
 import React, { Suspense, lazy } from 'react'
 
-import { useChecResultContext } from "./Context/ChecContextProvider";
+import { useCartResultContext } from "./modules/cart/api/CartContextProvider";
 
 const  MyAccountContainer  = lazy(() => import('./pages/my-account/MyAccountContainer'))
 
 
 function App() {
-  const { successCart } = useChecResultContext();
+  const { successCart } = useCartResultContext();
   return (
     <div className="text-gray-700">
       <BrowserRouter>

@@ -1,13 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { StocksLocations } from "../../Utils/StocksLocations";
-import HeartIcon from "../../../images/Cart/gray-heart.svg";
-import BinIcon from "../../../images/Cart/trash.svg";
+import BinIcon from "../../../../images/Cart/trash.svg";
+import { Button } from "../../../../components/Utils/Button";
 import { CartAction } from "./CartAction";
-import { Button } from "../../Utils/Button";
-import CartIcon from "../../../images/shopping-cart.svg";
-import { useChecResultContext } from "../../../Context/ChecContextProvider";
+import CartIcon from "../../../../images/shopping-cart.svg";
+import HeartIcon from "../../../../images/Cart/gray-heart.svg";
+import { Link } from "react-router-dom";
+import React from "react";
+import { StocksLocations } from "../../../../components/Utils/StocksLocations";
+import { useCartResultContext } from "../../api/CartContextProvider";
+import { useChecResultContext } from "../../../../Context/ChecContextProvider";
+import { useLocation } from "react-router-dom";
 
 export const CartProduct = ({ product }) => {
   const location = useLocation();
@@ -16,9 +17,12 @@ export const CartProduct = ({ product }) => {
 
   const {
     removeFromCart,
-    moveWishList,
     updateCart,
     addToCart,
+  } = useCartResultContext();
+
+  const {
+    moveWishList,
     deleteFromWishlist,
   } = useChecResultContext();
 
