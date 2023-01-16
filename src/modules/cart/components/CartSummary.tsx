@@ -1,16 +1,21 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React from "react";
 
-export const CartSummary = ({ cart }) => {
+interface Props {
+  total_items: string
+  subtotal: string
+}
+
+export const CartSummary: React.FC<Props> = ({ total_items, subtotal }) => {
   return (
     <div className="bg-white p-6 border border-gray-200  rounded sm:mb-6 mb-4">
       <h2 className="font-bold text-[18px] mb-6">Cart Summary</h2>
       <div className="flex justify-between items-center mb-3">
         <div className="text-xs">
-          <strong>TOTAL:</strong> {cart?.total_items} item(s)
+          <strong>TOTAL:</strong> {total_items} item(s)
         </div>
         <div className="text-[26px] font-bold text-green-700">
-          <span>{cart?.subtotal?.formatted_with_symbol?.split(".")[0]}</span>
+          <span>{subtotal}</span>
         </div>
       </div>
       <div className="">

@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import CartIcon from "../../images/shopping-cart.svg";
 import ArrowIcon from "../../images/Cart/arrow-right.svg";
-import { useChecResultContext } from "../../Context/ChecContextProvider";
 import { Button } from "../../components/Utils/Button";
+import CartIcon from "../../images/shopping-cart.svg";
+import { Link } from "react-router-dom";
+import React from "react";
+import { useCartResultContext } from "../../modules/cart/api/CartContextProvider";
 
 export const PriceDisplay = ({ singleProduct }) => {
-  const { addToCart, isLoading } = useChecResultContext();
+  const { addToCart, isLoading } = useCartResultContext();
 
   const handleOnCredit = () => {
     const price = singleProduct?.price?.raw * 1;

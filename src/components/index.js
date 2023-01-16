@@ -1,9 +1,6 @@
 import { AccountType } from "./Account/index.tsx";
 import { Alert } from "./Utils/Alert/Alert";
 import { Button } from "./Utils/Button";
-import { CartProduct } from "./Cart/CartProduct";
-import { CartSummary } from "./Cart/CartSummary";
-import { CartSummaryInfo } from "./Cart/CartSummaryInfo";
 import { CheckOrderBanner } from "./CheckOrderBanner/CheckOrderBanner";
 import { CovidBanner } from "./covidBanner/CovidBanner";
 import { CreateWishList } from "./Wshlist/CreateWishList";
@@ -49,9 +46,6 @@ export {
   PriceDisplay,
   MainProductDisplay,
   ProductDescription,
-  CartSummary,
-  CartSummaryInfo,
-  CartProduct,
   CreateWishList,
   PageTitle,
   Button,

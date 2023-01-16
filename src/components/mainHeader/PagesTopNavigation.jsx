@@ -1,18 +1,19 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
+
 import BrandLogo from "../../images/branding/codealot-logo.svg";
 import CartIcon from "../../images/shopping-cart.svg";
 import Heart from "../../images/heart.svg";
-import { PagesTopNavSingleLink } from "./PagesTopNavSingleLink";
 import { MyAccounts } from "./MyAccounts";
-import { useChecResultContext } from "../../Context/ChecContextProvider";
+import { PagesTopNavSingleLink } from "./PagesTopNavSingleLink";
+import React from "react";
+import { useCartResultContext } from "../../modules/cart/api/CartContextProvider";
 
 export const PagesTopNavigation = () => {
   const location = useLocation();
   const currentURL = location.pathname === "/help";
   const {
     cart: { total_items },
-  } = useChecResultContext();
+  } = useCartResultContext();
 
   return (
     <div className="hidden sm:flex h-full flex justify-between items-center">

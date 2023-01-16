@@ -1,22 +1,25 @@
+import "./index.css";
+import "./data";
+
+import App from "./App";
+import { CartContextProvider } from "./modules/cart/api/CartContextProvider";
+import { ChecContextProvider } from "./Context/ChecContextProvider";
+import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-//import "regenerator-runtime/runtime";
-import App from "./App";
-import "./data";
-import store from "./app/app";
-import { Provider } from "react-redux";
-import { ChecContextProvider } from "./Context/ChecContextProvider";
 import reportWebVitals from "./reportWebVitals";
+import store from "./app/app";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <ChecContextProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </ChecContextProvider>
+    <CartContextProvider>
+      <ChecContextProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ChecContextProvider>
+    </CartContextProvider>
   </Provider>
 );
 
