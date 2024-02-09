@@ -7,8 +7,11 @@ import { ChecContextProvider } from "./Context/ChecContextProvider";
 import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {initializeTagManager} from "./modules/google/lib"
 import reportWebVitals from "./reportWebVitals";
 import store from "./app/app";
+
+initializeTagManager()
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,23 +1,40 @@
-import React, { useEffect } from "react";
-import { useChecResultContext } from "../Context/ChecContextProvider";
 import {
   CheckOrderBanner,
-  SideAdverts,
-  MainCarousel,
-  LogoCarousel,
-  ProductsPreviews,
-  ProductCard,
   LoaderSpinner,
-} from "../components";
+  LogoCarousel,
+  MainCarousel,
+  ProductCard,
+  ProductsPreviews,
+  SideAdverts,
+} from '../components'
+import React, { useEffect } from 'react'
+
+import TagManager from 'react-gtm-module'
+import { useChecResultContext } from '../Context/ChecContextProvider'
 
 export const HomeContainer = () => {
   const { products, getProducts, categories, isProductsLoading } =
-    useChecResultContext();
+    useChecResultContext()
+
+  useEffect(() => {
+    try {
+      TagManager.dataLayer({
+        dataLayer: {
+          event: 'page_view',
+          userId: 'pk_001',
+          userProject: 'codealot',
+          page: 'home test',
+        },
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }, [])
 
   // eslint-disable-next-line
-  useEffect(() => getProducts(), []);
+  useEffect(() => getProducts(), [])
 
-  if (isProductsLoading) return <LoaderSpinner />;
+  if (isProductsLoading) return <LoaderSpinner />
 
   let DisplayedProducts = ({ catergory, numOfColums = 3 }) => {
     return (
@@ -33,8 +50,8 @@ export const HomeContainer = () => {
             </div>
           ))}
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <>
@@ -72,7 +89,7 @@ export const HomeContainer = () => {
               <div>
                 {categories.slice(0, 4).map((catergory, index) => {
                   if (catergory.products < 3) {
-                    return null;
+                    return null
                   } else {
                     return (
                       <ProductsPreviews
@@ -90,7 +107,7 @@ export const HomeContainer = () => {
                           />
                         </div>
                       </ProductsPreviews>
-                    );
+                    )
                   }
                 })}
               </div>
@@ -99,5 +116,5 @@ export const HomeContainer = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
