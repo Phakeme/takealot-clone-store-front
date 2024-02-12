@@ -22,6 +22,21 @@ cd codealot
 npm install
 ```
 
+## Running the app with Docker
+```bash
+# To build the docker image for the app
+docker build -t takealot-clone-store-front:1.0 .
+```
+
+## Start and Stop Engines
+```bash
+# rebuild arbitrarily, won't affect running containers
+docker-compose build
+
+# rebuild and immediately start containers
+docker-compose up -d --build
+```
+
 ### Initial Configuration
 
 You will need the get the api access token from 
